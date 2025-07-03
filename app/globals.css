@@ -286,7 +286,13 @@ nav p#logo {
     font-size: 4rem;
     letter-spacing: 0;
   }
-
+  .menu-links a {
+    font-size: 2rem;
+  }
+  .menu-items img {
+    max-height: 70svh;
+  justify-content: center; /* 🔥 this centers vertically */
+  }
 }
 
 /* lANDING */
@@ -692,6 +698,8 @@ a, p {
   width: 95%;
   margin: auto;
   margin-top: 2rem;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 /* Gallery Items */
