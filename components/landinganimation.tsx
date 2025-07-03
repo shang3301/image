@@ -57,7 +57,7 @@ export default function LandingAnimation() {
 
         gsap.set(".landing-split-overlay .landing-outro-title .char", {
           x: isMobile ? "2rem" : "6rem",
-          y: isMobile ? "4rem" : "5rem",
+          y: isMobile ? "4rem" : "6rem",
         });
 
         const tl = gsap.timeline({ defaults: { ease: "thop" } });
@@ -89,8 +89,8 @@ export default function LandingAnimation() {
             duration: 0.75,
           }, 4.5)
           .to(".landing-preloader .landing-outro-title .char", {
-            x: isMobile ? "3rem" : "6rem",
-            y: isMobile ? "4rem" : "5rem",
+            x: isMobile ? "2rem" : "6rem",
+            y: isMobile ? "4rem" : "6rem",
             duration: 0.75,
             onComplete: () => {
               gsap.set(".landing-preloader", {

@@ -250,8 +250,8 @@ originalPosition = {
   expandedItem.addEventListener("click", closeExpandedItem);
   document.body.appendChild(expandedItem);
 
-  const targetWidth = window.innerWidth * 0.4;
-  const targetHeight = targetWidth * 1.4;
+  const targetWidth = window.innerWidth * 0.7;
+  const targetHeight = targetWidth * 1.7;
   const targetX = (window.innerWidth - targetWidth) / 2;
   const targetY = (window.innerHeight - targetHeight) / 2;
 
