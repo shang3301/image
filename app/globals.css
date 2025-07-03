@@ -428,16 +428,16 @@ nav p#logo {
 
 .landing-intro-title {
   position: absolute;
-  top: 35%;
+  top: 25%;
   left: 50%;
-  transform: translate(-50%, -100%);
+  transform: translate(-50%, -0%);
   text-align: center;
   width: 100%;
 }
 
 .landing-outro-title {
   position: absolute;
-  top: 45%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, 0%);
   text-align: center;
@@ -490,8 +490,12 @@ nav p#logo {
   .landing-outro-title .char {
     margin-top: 0.5rem;
   }
-  .landing-intro-title,
-  .landing-outro-title {
+
+  .landing-intro-title{
+    top: 35%;
+  }
+
+  .landing-outro-title{
     top: 40%;
   }
 
