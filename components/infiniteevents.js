@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 import SplitType from "split-type";
+import { animateTextReveal } from "@/components/gsapTextReveal";
 
 const InfiniteEvents = () => {
   useEffect(() => {
@@ -200,18 +201,18 @@ function expandItem(item) {
 
   const rect = getOffsetRelativeToPage(imgElement);
 
-originalPosition = {
-  id: item.id,
-  rect: {
-    top: rect.top,
-    left: rect.left,
-    width: rect.width,
-    height: rect.height
-  },
-  canvasOffsetX: rect.canvasOffsetX,
-  canvasOffsetY: rect.canvasOffsetY,
-  imgSrc
-};
+  originalPosition = {
+    id: item.id,
+    rect: {
+      top: rect.top,
+      left: rect.left,
+      width: rect.width,
+      height: rect.height
+    },
+    canvasOffsetX: rect.canvasOffsetX,
+    canvasOffsetY: rect.canvasOffsetY,
+    imgSrc
+  };
 
   overlay.classList.add("events-overlay-active");
 
@@ -235,6 +236,20 @@ originalPosition = {
   const caption = document.createElement("div");
   caption.className = "expanded-caption";
 
+    if (caption) {
+      gsap.to(caption, {
+        opacity: 0,
+        y: -30,
+        duration: 0.3,
+        ease: "power1.inOut"
+      });
+    }
+    if (caption) {
+      caption.style.opacity = "0";
+      caption.style.pointerEvents = "none";
+      caption.style.position = "absolute"; // Take it out of the flow
+    }
+
   const titleEl = document.createElement("h2");
   titleEl.textContent = itemData.title;
 
@@ -255,7 +270,7 @@ originalPosition = {
   const targetX = (window.innerWidth - targetWidth) / 2;
   const targetY = (window.innerHeight - targetHeight) / 2;
 
-  gsap.to(expandedItem, {
+    gsap.to(expandedItem, {
     top: targetY,
     left: targetX,
     width: targetWidth,
@@ -264,8 +279,20 @@ originalPosition = {
     ease: "hop",
     onStart: () => {
       gsap.delayedCall(0.5, animateTitleIn);
+    },
+    onComplete: () => {
+      if (caption) {
+        caption.style.opacity = "1";
+        caption.style.pointerEvents = "auto";
+
+        requestAnimationFrame(() => {
+          animateTextReveal(".expanded-item .expanded-caption h2", 0.1);
+          animateTextReveal(".expanded-item .expanded-caption p", 0.2);
+        });
+      }
     }
   });
+
 
   document.querySelectorAll(".events-item").forEach((el) => {
     if (el !== item) {

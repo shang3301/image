@@ -624,21 +624,36 @@ a, p {
 }
 
 /* Caption under expanded item */
-.events-expanded-caption {
-  text-align: center;
-  margin-top: 16px;
+.expanded-caption {
+  position: fixed;
+  color: white;
+  max-width: 80%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-top: 40em;
 }
 
-.events-expanded-caption h2 {
-  font-size: 2rem;
-  margin-bottom: 8px;
+.expanded-caption h2 .char,
+.expanded-caption p .char {
+  display: inline-block;
+  will-change: transform;
 }
 
-.events-expanded-caption p {
+
+.expanded-caption h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.expanded-caption p {
   font-size: 1rem;
-  line-height: 1.4;
-  max-width: 90%;
+  opacity: 0.85;
+  margin-top: 1rem;
 }
+
 
 /* Overlay for Expanded Item */
 .events-overlay {
@@ -662,7 +677,7 @@ a, p {
 /* Project Title */
 .events-project-title {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
