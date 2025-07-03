@@ -496,7 +496,7 @@ nav p#logo {
   }
 
   .landing-tag-1 {
-  top: 10%;
+  top: 15%;
   left: 15%;
   }
 
@@ -685,8 +685,8 @@ a, p {
 }
 
 /* Main Container */
-.container {
-  height: 100vh;
+.container {  
+  min-height: 100dvh; /* Use dynamic vh unit */
   overflow-y: auto;
   width: 100%;
   padding: 4rem 2rem;
@@ -700,8 +700,6 @@ a, p {
   width: 95%;
   margin: auto;
   margin-top: 2rem;
-  max-height: 100vh;
-  overflow-y: auto;
 }
 
 

@@ -6,6 +6,7 @@ import { animateTextReveal } from "@/components/gsapTextReveal";
 
 export default function Gallery() {
   useEffect(() => {
+    requestAnimationFrame(() => {
     const galleryContainer = document.querySelector(".gallery");
     const imgModal = document.querySelector(".img-modal");
     const imgViewContainer = imgModal?.querySelector(".img");
@@ -130,6 +131,7 @@ function revealModal() {
 
     revealModal();
     animateTextReveal(".item-name", 0.1);
+    });
   }, []);
 
   return (
