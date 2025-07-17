@@ -4,10 +4,10 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { animateTextReveal } from "@/components/gsapTextReveal";
 
-export default function Gallery() {
+export default function Team() {
   useEffect(() => {
     requestAnimationFrame(() => {
-    const galleryContainer = document.querySelector(".gallery");
+    const galleryContainer = document.querySelector(".team");
     const imgModal = document.querySelector(".img-modal");
     const imgViewContainer = imgModal?.querySelector(".img");
     const modalName = imgModal?.querySelector(".img-name p");
@@ -137,7 +137,7 @@ function revealModal() {
   return (
     <>
       <div className="container">
-        <div className="gallery" />
+        <div className="team" />
       </div>
 
       <div className="img-modal">

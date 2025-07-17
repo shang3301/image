@@ -1,0 +1,136 @@
+
+/* Gallery */
+.gallery-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #090909;
+}
+
+/* Main Container */
+.container {  
+  min-height: 100dvh; /* Use dynamic vh unit */
+  overflow-y: auto;
+  width: 100%;
+  padding: 4rem 2rem;
+}
+
+/* Gallery Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  width: 95%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+
+/* Gallery Items */
+.item {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-img {
+  height: 180px;
+  overflow: hidden;
+}
+
+.item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-name {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.85rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+/* Modal */
+.img-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #090909;
+  display: flex;
+  flex-direction: column;
+  padding: 6em 0;
+  pointer-events: none;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  z-index: 1000;
+  transition: clip-path 0.75s ease;
+  justify-content: center; /* Center vertically */
+  align-items: center;     /* Center horizontally */
+}
+
+.img-modal .img {
+  position: relative;
+  width: 400px;
+  height: 500px;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  transition: clip-path 0.75s ease;
+  margin-bottom: 1rem;
+}
+
+.img-modal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+/* Modal Text */
+.modal-item {
+  margin-top: 2rem;
+  z-index: 2;
+  text-align: center;
+  margin-top: 0;
+}
+
+.modal-item p {
+  top: 0;
+  font-size: 14px;
+  color: white;
+  position: relative;
+  top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .img-modal .img {
+    min-width: 70vw;
+    height: auto;
+    min-height: 70svh;
+    max-width: 80vw;
+    max-height: 80svh;
+  }
+
+  .item-img {
+    height: 160px;
+  }
+
+  .item-name {
+    font-size: 0.75rem;
+    height: 35px;
+  }
+}
+
+.word {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}

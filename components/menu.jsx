@@ -62,7 +62,7 @@ const Menu = () => {
     if (!container) return;
     container.innerHTML = "";
     const img = document.createElement("img");
-    img.src = "images/1.jpg";
+    img.src = "images/6.jpg";
     img.alt = "";
     container.appendChild(img);
   };
@@ -204,7 +204,7 @@ const Menu = () => {
                   { label: "Home", img: "images/6.jpg", href: "./" },
                   { label: "Events", img: "images/3.jpg", href: "./events" },
                   { label: "Gallery", img: "images/4.jpg", href: "./gallery" },
-                  { label: "Connect", img: "images/5.jpg" },
+                  { label: "Team", img: "images/5.jpg", href:"./team"},
                 ].map(({ label, img, href = "#" }) => (
                   <div className="link" key={label}>
                     <a 

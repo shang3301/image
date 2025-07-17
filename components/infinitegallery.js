@@ -6,7 +6,7 @@ import { CustomEase } from "gsap/CustomEase";
 import SplitType from "split-type";
 import { animateTextReveal } from "@/components/gsapTextReveal";
 
-const InfiniteEvents = () => {
+const InfiniteGallery = () => {
   useEffect(() => {
       const items = [
   { title: "Chromatic Loopscape", description: "A vibrant cycle of color and motion." },
@@ -34,10 +34,10 @@ const InfiniteEvents = () => {
     gsap.registerPlugin(CustomEase);
     CustomEase.create("hop", "0.9, 0, 0.1, 1");
 
-    const container = document.querySelector(".events-container");
-    const canvas = document.querySelector(".events-canvas");
-    const overlay = document.querySelector(".events-overlay");
-    const projectTitleElement = document.querySelector(".events-project-title p");
+    const container = document.querySelector(".gallery-container");
+    const canvas = document.querySelector(".gallery-canvas");
+    const overlay = document.querySelector(".gallery-overlay");
+    const projectTitleElement = document.querySelector(".gallery-project-title p");
 
     const itemCount = 20;
     const itemGap = 150;
@@ -112,7 +112,7 @@ const InfiniteEvents = () => {
           if (activeItemId === itemId && isExpanded) continue;
 
           const item = document.createElement("div");
-          item.className = "events-item";
+          item.className = "gallery-item";
           item.id = itemId;
           item.style.left = `${col * (itemWidth + itemGap)}px`;
           item.style.top = `${row * (itemHeight + itemGap)}px`;
@@ -214,7 +214,7 @@ function expandItem(item) {
     imgSrc
   };
 
-  overlay.classList.add("events-overlay-active");
+  overlay.classList.add("gallery-overlay-active");
 
   expandedItem = document.createElement("div");
   expandedItem.className = "expanded-item";
@@ -246,7 +246,7 @@ function expandItem(item) {
     }
     if (caption) {
       caption.style.opacity = "0";
-      caption.style.pointerEvents = "none";
+      caption.style.pointergallery = "none";
       caption.style.position = "absolute"; // Take it out of the flow
     }
 
@@ -283,7 +283,7 @@ function expandItem(item) {
     onComplete: () => {
       if (caption) {
         caption.style.opacity = "1";
-        caption.style.pointerEvents = "auto";
+        caption.style.pointergallery = "auto";
 
         requestAnimationFrame(() => {
           animateTextReveal(".expanded-item .expanded-caption h2", 0.1);
@@ -294,13 +294,13 @@ function expandItem(item) {
   });
 
 
-  document.querySelectorAll(".events-item").forEach((el) => {
+  document.querySelectorAll(".gallery-item").forEach((el) => {
     if (el !== item) {
       gsap.to(el, {
         opacity: 0,
         duration: 0.3,
         ease: "power2.out",
-        pointerEvents: "none"
+        pointergallery: "none"
       });
     }
   });
@@ -311,7 +311,7 @@ function closeExpandedItem() {
   if (!expandedItem || !originalPosition) return;
 
   animateTitleOut();
-  overlay.classList.remove("events-overlay-active");
+  overlay.classList.remove("gallery-overlay-active");
 
   const originalItem = document.getElementById(activeItemId);
   if (!originalItem) {
@@ -334,7 +334,7 @@ function closeExpandedItem() {
     }
     if (caption) {
       caption.style.opacity = "0";
-      caption.style.pointerEvents = "none";
+      caption.style.pointergallery = "none";
       caption.style.position = "absolute"; // Take it out of the flow
     }
 
@@ -362,12 +362,12 @@ function closeExpandedItem() {
     }
   });
 
-  document.querySelectorAll(".events-item").forEach((el) => {
+  document.querySelectorAll(".gallery-item").forEach((el) => {
     gsap.to(el, {
       opacity: 1,
       duration: 0.3,
       ease: "power2.out",
-      pointerEvents: "auto"
+      pointergallery: "auto"
     });
   });
 }
@@ -479,10 +479,10 @@ function closeExpandedItem() {
   }, []);
 
   return (
-  <div className="events-container">
-    <div className="events-canvas"></div>
-    <div className="events-overlay"></div>
-    <div className="events-project-title">
+  <div className="gallery-container">
+    <div className="gallery-canvas"></div>
+    <div className="gallery-overlay"></div>
+    <div className="gallery-project-title">
       <p></p>
     </div>
   </div>
@@ -490,4 +490,4 @@ function closeExpandedItem() {
 
 };
 
-export default InfiniteEvents;
+export default InfiniteGallery;
