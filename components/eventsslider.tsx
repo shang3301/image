@@ -2,6 +2,9 @@
 
 import { useEffect } from "react";
 import { gsap } from "gsap";
+import CustomEase from "gsap/CustomEase";
+
+gsap.registerPlugin(CustomEase);
 
 
 export default function EventSlider() {
