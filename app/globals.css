@@ -476,7 +476,7 @@ nav p#logo {
 /* Responsive */
 @media (max-width: 1000px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   .landing-card {
     width: 75%;
@@ -998,15 +998,16 @@ a, p {
   }
 
   .slide-copy {
-    top: 60%;
+    top: 50%;
     left: 50%;
   }
+
   .slide-title,
   .slide-description {
-    width: 80vw; /* or any % that looks good */
+    width: 50vw; /* or any % that looks good */
     text-align: center;
   }
-
+  
   .slide-title h1 {
     font-size: 32px;
   }
