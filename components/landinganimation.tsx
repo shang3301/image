@@ -56,7 +56,7 @@ export default function LandingAnimation() {
         });
 
         gsap.set(".landing-split-overlay .landing-outro-title .char", {
-          x: isMobile ? "2em" : "5em",
+          x: isMobile ? "2em" : "3em",
           y: isMobile ? "2em" : "2em",
         });
 
@@ -89,7 +89,7 @@ export default function LandingAnimation() {
             duration: 0.75,
           }, 4.5)
           .to(".landing-preloader .landing-outro-title .char", {
-            x: isMobile ? "2em" : "5em",
+            x: isMobile ? "2em" : "3em",
             y: isMobile ? "2em" : "2em",
             duration: 0.75,
             onComplete: () => {
@@ -102,7 +102,7 @@ export default function LandingAnimation() {
             },
           }, 4.5)
           .to(".landing-container", {
-            clipPath: "polygon(0% 48%, 100% 48%, 100% 52%, 0% 52%)",
+            clipPath: "polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%)",
             duration: 1,
           }, 5);
 
