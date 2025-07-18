@@ -184,7 +184,7 @@ nav p#logo {
 
 .menu-preview-img {
   position: relative;
-  width: 45%;
+  width: 50%;
   height: 100%;
   overflow: hidden;
 }
@@ -291,7 +291,7 @@ nav p#logo {
   }
   .menu-items img {
     max-height: 70svh;
-  justify-content: center; /* 🔥 this centers vertically */
+    justify-content: center; /* 🔥 this centers vertically */
   }
 }
 
@@ -999,6 +999,19 @@ a, p {
 
   .slide-copy {
     top: 60%;
-    left: 60%;
+    left: 50%;
+  }
+  .slide-title,
+  .slide-description {
+    width: 80vw; /* or any % that looks good */
+    text-align: center;
+  }
+
+  .slide-title h1 {
+    font-size: 32px;
+  }
+
+  .slide-description p {
+    font-size: 16px;
   }
 }
