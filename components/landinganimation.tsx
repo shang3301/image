@@ -51,12 +51,12 @@ export default function LandingAnimation() {
         ], { y: "0%" });
 
         gsap.set(".landing-split-overlay .landing-intro-title", {
-          x: isMobile ? "2em" : "6em",
-          y: isMobile ? "-2em" : "-2em",
+          x: isMobile ? "4em" : "5em",
+          y: isMobile ? "-4em" : "-2em",
         });
 
         gsap.set(".landing-split-overlay .landing-outro-title .char", {
-          x: isMobile ? "2em" : "4em",
+          x: isMobile ? "1em" : "5em",
           y: isMobile ? "2em" : "2em",
         });
 
@@ -84,12 +84,12 @@ export default function LandingAnimation() {
             stagger: 0.075,
           }, 2.5)
           .to(".landing-preloader .landing-intro-title", {
-            x: isMobile ? "-2em" : "-6em",
+            x: isMobile ? "-2em" : "-5em",
             y: isMobile ? "-2em" : "-2em",
             duration: 0.75,
           }, 4.5)
           .to(".landing-preloader .landing-outro-title .char", {
-            x: isMobile ? "2em" : "4em",
+            x: isMobile ? "1em" : "5em",
             y: isMobile ? "2em" : "2em",
             duration: 0.75,
             onComplete: () => {
