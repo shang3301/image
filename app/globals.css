@@ -981,6 +981,7 @@ a, p {
   width: 500px;
   height: 20px;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  overflow: visible;
 }
 
 .slide-description p {
@@ -990,6 +991,10 @@ a, p {
   font-weight: lighter;
   transform: translateY(0px);
   will-change: transform;
+}
+
+.slide-description p:not(:last-child) {
+  display: none;
 }
 
 @media (max-width: 900px) {
@@ -1004,15 +1009,15 @@ a, p {
 
   .slide-title,
   .slide-description {
-    width: 50vw; /* or any % that looks good */
+    width: 70vw; /* or any % that looks good */
     text-align: center;
   }
   
   .slide-title h1 {
-    font-size: 32px;
+    font-size: 25px;
   }
 
   .slide-description p {
-    font-size: 16px;
+    font-size: 15px;
   }
 }

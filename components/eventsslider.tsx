@@ -6,7 +6,6 @@ import CustomEase from "gsap/CustomEase";
 
 gsap.registerPlugin(CustomEase);
 
-
 export default function EventSlider() {
   useEffect(() => {
     const totalSlides = 7;
@@ -69,6 +68,7 @@ export default function EventSlider() {
 
       const newDescription = document.createElement("p");
       newDescription.textContent = slideDescriptions[slideNumber - 1];
+      newDescription.className = "split-description";
       gsap.set(newDescription, { y: direction === "down" ? 20 : -20 });
 
       const newCounter = document.createElement("p");
@@ -93,7 +93,7 @@ export default function EventSlider() {
       const counterContainer = document.querySelector(".count")!;
 
       const currentTitle = titleContainer.querySelector("h1")!;
-      const currentDescription = descriptionContainer.querySelector("p")!;
+      const currentDescription = Array.from(descriptionContainer.querySelectorAll("p")).at(-1)!;
       const currentCounter = counterContainer.querySelector("p")!;
 
       currentSlide = direction === "down"
@@ -103,6 +103,9 @@ export default function EventSlider() {
       const newSlide = createSlide(currentSlide, direction);
       const newMainWrapper = createMainImageWrapper(currentSlide, direction);
       const [newTitle, newDescription, newCounter] = createTextElements(currentSlide, direction);
+
+      // Clear previous transform styles
+      gsap.set(newDescription, { clearProps: "all" });
 
       slider.appendChild(newSlide);
       mainImageContainer.appendChild(newMainWrapper);
@@ -116,7 +119,7 @@ export default function EventSlider() {
 
       gsap.timeline({
         onComplete: () => {
-          [currentSlideElement, currentMainWrapper, currentTitle, currentDescription, currentCounter].forEach(el => el.remove());
+          [currentSlideElement, currentMainWrapper, currentTitle, currentCounter, currentDescription].forEach(el => el?.remove());
           isAnimating = false;
           setTimeout(() => scrollAllowed = true, 100);
         }
