@@ -34,7 +34,7 @@ export default function Home() {
           <p>" Pulkit is a Chihuahua " </p>
         </div>
         <div className="landing-tag landing-tag-3">
-          <p>Sponsored By RAID Shadow Legends</p>
+          <p>Prakhar is a Blobfish</p>
         </div>
       </div>
 
