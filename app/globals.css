@@ -959,12 +959,33 @@ a, p {
   z-index: 2;
 }
 
+.slide-copy h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.slide-copy h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+.slide-copy p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
 .slide-title {
   position: relative;
   width: 500px;
   height: 50px;
   margin-bottom: 0.75em;
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+.slide-title {
+  display: flex;
+  flex-direction: column; /* h1 on top, h3 below */
 }
 
 .slide-title h1 {
@@ -977,20 +998,20 @@ a, p {
 }
 
 .slide-description {
-  position: relative;
-  width: 500px;
-  height: 20px;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-  overflow: visible;
+  position: relative;       /* container handles positioning */
+  max-width: 700px;         /* adjust as needed */
+  margin: 0 auto;
 }
 
 .slide-description p {
-  position: absolute;
+  position: relative;       /* no absolute here */
+  display: block;           /* ensures each <p> stacks properly */
   color: #fff;
   font-size: 18px;
   font-weight: lighter;
-  transform: translateY(0px);
-  will-change: transform;
+  line-height: 1.6;         /* proper spacing */
+  white-space: normal;      /* allow wrapping */
+  margin: 0.5rem 0;         /* space between multiple paragraphs */
 }
 
 .slide-description p:not(:last-child) {
