@@ -195,7 +195,19 @@ export default function EventSlider() {
             ease: CustomEase.create("custom", ".87, 0, .13, 1"),
           },
           0
-        )
+        ).to(currentDescription, {
+  y: direction === "down" ? -20 : 20,
+  opacity: 0,
+  duration: 1,
+  ease: CustomEase.create("custom", ".87, 0, .13, 1"),
+}, 0)
+.to(newDescription, {
+  y: 0,
+  opacity: 1,
+  duration: 1,
+  ease: CustomEase.create("custom", ".87, 0, .13, 1"),
+}, 0)
+
         .to(
           currentCounter,
           {
