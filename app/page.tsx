@@ -31,10 +31,10 @@ export default function Home() {
           <p>IMRPROVISE. ADAPT. OVERCOME.</p>
         </div>
         <div className="landing-tag landing-tag-2">
-          <p>" Pulkit is a Chihuahua " </p>
+          <p>CODE. CREATE. INNOVATE. </p>
         </div>
         <div className="landing-tag landing-tag-3">
-          <p>" Prakhar is a Blobfish "</p>
+          <p>TECHNOLYMPICS 2025</p>
         </div>
       </div>
 
@@ -48,14 +48,13 @@ export default function Home() {
         </div>
 
         <div className="landing-card">
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          ></iframe>
+          <iframe width="100%" height="100%" 
+          src="https://www.youtube.com/embed/q2UYrRkVIUY" 
+          title="4K 100% Royalty-Free Stock Footage | Technology CPU Light Effect Zooming | No Copyright Video" 
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+          </iframe>
         </div>
       </div>
 
