@@ -51,9 +51,7 @@ export default function Home() {
           <iframe width="100%" height="100%" 
           src="https://www.youtube.com/embed/q2UYrRkVIUY" 
           title="4K 100% Royalty-Free Stock Footage | Technology CPU Light Effect Zooming | No Copyright Video" 
-          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          referrerpolicy="strict-origin-when-cross-origin" 
-          allowfullscreen>
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" >
           </iframe>
         </div>
       </div>
