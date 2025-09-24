@@ -1024,10 +1024,11 @@ a, p {
   display: none;
 }
 
+/* Desktop timeline (keep existing styles) */
 .slider-timeline {
   position: absolute;
   top: 50%;
-  right: 10%; /* distance from right edge */
+  right: 10%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
@@ -1035,7 +1036,7 @@ a, p {
   z-index: 3;
 }
 
-.slider-timeline button{
+.slider-timeline button {
   color: #cecece;
   font-size: 16px;
   cursor: pointer;
@@ -1052,12 +1053,66 @@ a, p {
   background-color: #ffffff17;
 }
 
-.slider-timeline button:active{
+.slider-timeline button:active {
   color: #ffffff17;
   border-left: 2px solid #fff;
   background-color: #ffffff09;
 }
 
+/* Mobile dropdown container */
+.slider-timeline-mobile {
+  display: none; /* will be shown via media query */
+  position: relative;
+  top: 10%;
+  right: 5%;
+  z-index: 3;
+  border-radius: 6px;
+  padding: 5px;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Dropdown select box */
+.slider-timeline-mobile select {
+  padding: 8px 12px;
+  font-size: 16px;
+  width: 200px;
+  background-color: #000000d0;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 4px;
+  outline: none;
+  appearance: none; /* removes default arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* Optional: add custom arrow using pseudo-element */
+.slider-timeline-mobile {
+  position: relative;
+}
+
+.slider-timeline-mobile::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #fff;
+  font-size: 12px;
+}
+
+/* Responsive: hide buttons, show dropdown */
+@media (max-width: 900px) {
+  .slider-timeline {
+    display: none;
+  }
+  .slider-timeline-mobile {
+    display: block;
+  }
+}
 
 @media (max-width: 900px) {
   .slide-main-img {

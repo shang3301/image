@@ -228,19 +228,39 @@ export default function EventSlider() {
         </div>
 
         {/* Timeline buttons */}
-        <div className="slider-timeline">
-          {events.map((event, index) => (
-            <button
-              key={index}
-              onClick={() =>
-                animateSlide(index + 1 > currentSlideRef.current ? "down" : "up", index + 1)
-              }
-              className={currentSlideRef.current === index + 1 ? "active" : ""}
-            >
-              {event.name}
-            </button>
-          ))}
-        </div>
+{/* Desktop Timeline Buttons */}
+<div className="slider-timeline">
+  {events.map((event, index) => (
+    <button
+      key={index}
+      onClick={() =>
+        animateSlide(index + 1 > currentSlideRef.current ? "down" : "up", index + 1)
+      }
+      className={currentSlideRef.current === index + 1 ? "active" : ""}
+    >
+      {event.name}
+    </button>
+  ))}
+</div>
+
+{/* Mobile Timeline Dropdown */}
+<div className="slider-timeline-mobile">
+  <select
+    value={currentSlideRef.current}
+    onChange={(e) =>
+      animateSlide(
+        Number(e.target.value) > currentSlideRef.current ? "down" : "up",
+        Number(e.target.value)
+      )
+    }
+  >
+    {events.map((event, index) => (
+      <option key={index} value={index + 1}>
+        {event.name}
+      </option>
+    ))}
+  </select>
+</div>
       </div>
     </>
   );
