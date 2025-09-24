@@ -1,261 +1,196 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import CustomEase from "gsap/CustomEase";
 
 gsap.registerPlugin(CustomEase);
 
 export default function EventSlider() {
-  useEffect(() => {
-    const totalSlides = events.length;
-    let currentSlide = 1;
-    let isAnimating = false;
-    let scrollAllowed = true;
-    let lastScrollTime = 0;
-    let touchStartY = 0;
+  const currentSlideRef = useRef(1);
+  const isAnimatingRef = useRef(false);
+  const touchStartY = useRef(0);
 
-    function getImgUrl(num: number) {
-      return `/images/${num}.jpg`; // You should have matching images (1.jpg,2.jpg,...)
-    }
+  /** Helper: get image URL */
+  function getImgUrl(num: number) {
+    return `/images/${num}.jpg`;
+  }
 
-    function createSlide(slideNumber: number, direction: string) {
-      const slide = document.createElement("div");
-      slide.className = "slide";
+  /** Helper: create slide element */
+  function createSlide(slideNumber: number, direction: string) {
+    const slide = document.createElement("div");
+    slide.className = "slide";
 
-      const slideBgImg = document.createElement("div");
-      slideBgImg.className = "slide-bg-img";
+    const slideBgImg = document.createElement("div");
+    slideBgImg.className = "slide-bg-img";
 
-      const img = document.createElement("img");
-      img.src = getImgUrl(slideNumber);
-      slideBgImg.appendChild(img);
-      slide.appendChild(slideBgImg);
+    const img = document.createElement("img");
+    img.src = getImgUrl(slideNumber);
+    slideBgImg.appendChild(img);
+    slide.appendChild(slideBgImg);
 
-      slideBgImg.style.clipPath =
+    slideBgImg.style.clipPath =
+      direction === "down"
+        ? "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)"
+        : "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)";
+
+    return slide;
+  }
+
+  /** Helper: create main image wrapper */
+  function createMainImageWrapper(slideNumber: number, direction: string) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "slide-main-img-wrapper";
+
+    const img = document.createElement("img");
+    img.src = getImgUrl(slideNumber);
+    wrapper.appendChild(img);
+
+    wrapper.style.clipPath =
+      direction === "down"
+        ? "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)"
+        : "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
+
+    return wrapper;
+  }
+
+  /** Helper: create text elements */
+  function createTextElements(slideNumber: number, direction: string) {
+    const event = events[slideNumber - 1];
+
+    const newTitle = document.createElement("h1");
+    newTitle.textContent = event.name;
+    gsap.set(newTitle, { y: direction === "down" ? 50 : -50 });
+
+    const newDescription = document.createElement("p");
+    newDescription.textContent = event.description;
+    newDescription.className = "split-description";
+    gsap.set(newDescription, { y: direction === "down" ? 20 : -20 });
+
+    const newCounter = document.createElement("p");
+    newCounter.textContent = String(slideNumber);
+    gsap.set(newCounter, { y: direction === "down" ? 18 : -18 });
+
+    return [newTitle, newDescription, newCounter] as const;
+  }
+
+  /** Animate slide */
+  function animateSlide(direction: string, targetIndex?: number) {
+    if (isAnimatingRef.current) return;
+    isAnimatingRef.current = true;
+
+    if (targetIndex !== undefined) {
+      currentSlideRef.current = targetIndex;
+    } else {
+      currentSlideRef.current =
         direction === "down"
-          ? "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)"
-          : "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)";
-
-      return slide;
-    }
-
-    function createMainImageWrapper(slideNumber: number, direction: string) {
-      const wrapper = document.createElement("div");
-      wrapper.className = "slide-main-img-wrapper";
-
-      const img = document.createElement("img");
-      img.src = getImgUrl(slideNumber);
-      wrapper.appendChild(img);
-
-      wrapper.style.clipPath =
-        direction === "down"
-          ? "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)"
-          : "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)";
-
-      return wrapper;
-    }
-
-    function createTextElements(slideNumber: number, direction: string) {
-      const event = events[slideNumber - 1];
-
-      const newTitle = document.createElement("h1");
-      newTitle.textContent = event.name;
-      gsap.set(newTitle, { y: direction === "down" ? 50 : -50 });
-
-      const newDescription = document.createElement("p");
-      newDescription.textContent = event.description;
-      newDescription.className = "split-description";
-      gsap.set(newDescription, { y: direction === "down" ? 20 : -20 });
-
-      const newCounter = document.createElement("p");
-      newCounter.textContent = String(slideNumber);
-      gsap.set(newCounter, { y: direction === "down" ? 18 : -18 });
-
-      return [newTitle, newDescription, newCounter];
-    }
-
-    function animateSlide(direction: string) {
-      if (isAnimating || !scrollAllowed) return;
-      isAnimating = true;
-      scrollAllowed = false;
-
-      const slider = document.querySelector(".slider")!;
-      const currentSlideElement = slider.querySelector(".slide")!;
-      const mainImageContainer = document.querySelector(".slide-main-img")!;
-      const currentMainWrapper =
-        mainImageContainer.querySelector(".slide-main-img-wrapper")!;
-
-      const titleContainer = document.querySelector(".slide-title")!;
-      const descriptionContainer = document.querySelector(".slide-description")!;
-      const counterContainer = document.querySelector(".count")!;
-
-      const currentTitle = titleContainer.querySelector("h1")!;
-      const currentDescription = Array.from(
-        descriptionContainer.querySelectorAll("p")
-      ).at(-1)!;
-      const currentCounter = counterContainer.querySelector("p")!;
-
-      currentSlide =
-        direction === "down"
-          ? currentSlide === totalSlides
+          ? currentSlideRef.current === events.length
             ? 1
-            : currentSlide + 1
-          : currentSlide === 1
-          ? totalSlides
-          : currentSlide - 1;
-
-      const newSlide = createSlide(currentSlide, direction);
-      const newMainWrapper = createMainImageWrapper(currentSlide, direction);
-      const [newTitle, newDescription, newCounter] = createTextElements(
-        currentSlide,
-        direction
-      );
-
-      gsap.set(newDescription, { clearProps: "all" });
-
-      slider.appendChild(newSlide);
-      mainImageContainer.appendChild(newMainWrapper);
-      titleContainer.appendChild(newTitle);
-      descriptionContainer.appendChild(newDescription);
-      counterContainer.appendChild(newCounter);
-
-      gsap.set(newMainWrapper.querySelector("img"), {
-        y: direction === "down" ? "-50%" : "50%",
-      });
-
-      gsap.timeline({
-        onComplete: () => {
-          [
-            currentSlideElement,
-            currentMainWrapper,
-            currentTitle,
-            currentCounter,
-            currentDescription,
-          ].forEach((el) => el?.remove());
-          isAnimating = false;
-          setTimeout(() => (scrollAllowed = true), 100);
-        },
-      })
-        .to(
-          newSlide.querySelector(".slide-bg-img"),
-          {
-            clipPath:
-              direction === "down"
-                ? "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)"
-                : "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-            duration: 1.0,
-            ease: CustomEase.create("custom", ".87, 0, .13, 1"),
-          },
-          0
-        )
-        .to(
-          currentSlideElement.querySelector("img"),
-          {
-            scale: 1.5,
-            duration: 1.0,
-            ease: CustomEase.create("custom", ".87, 0, .13, 1"),
-          },
-          0
-        )
-        .to(
-          newMainWrapper,
-          {
-            clipPath:
-              direction === "down"
-                ? "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"
-                : "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-            duration: 1.0,
-            ease: CustomEase.create("custom", ".87, 0, .13, 1"),
-          },
-          "<"
-        )
-        .to(
-          newMainWrapper.querySelector("img"),
-          {
-            y: "0%",
-            duration: 1.0,
-            ease: CustomEase.create("custom", ".87, 0, .13, 1"),
-          },
-          0
-        )
-        .to(
-          currentTitle,
-          {
-            y: direction === "down" ? -50 : 50,
-            duration: 1.0,
-            ease: CustomEase.create("custom", ".87, 0, .13, 1"),
-          },
-          0
-        )
-        .to(
-          newTitle,
-          {
-            y: 0,
-            duration: 1.0,
-            ease: CustomEase.create("custom", ".87, 0, .13, 1"),
-          },
-          0
-        ).to(currentDescription, {
-  y: direction === "down" ? -20 : 20,
-  opacity: 0,
-  duration: 1,
-  ease: CustomEase.create("custom", ".87, 0, .13, 1"),
-}, 0)
-.to(newDescription, {
-  y: 0,
-  opacity: 1,
-  duration: 1,
-  ease: CustomEase.create("custom", ".87, 0, .13, 1"),
-}, 0)
-
-        .to(
-          currentCounter,
-          {
-            y: direction === "down" ? -18 : 18,
-            duration: 1.0,
-            ease: CustomEase.create("custom", ".87, 0, .13, 1"),
-          },
-          0
-        )
-        .to(
-          newCounter,
-          {
-            y: 0,
-            duration: 1.0,
-            ease: CustomEase.create("custom", ".87, 0, .13, 1"),
-          },
-          0
-        );
+            : currentSlideRef.current + 1
+          : currentSlideRef.current === 1
+          ? events.length
+          : currentSlideRef.current - 1;
     }
 
-    function handleScroll(direction: string) {
+    const slider = document.querySelector(".slider")!;
+    const currentSlideElement = slider.querySelector(".slide")!;
+    const mainImageContainer = document.querySelector(".slide-main-img")!;
+    const currentMainWrapper = mainImageContainer.querySelector(".slide-main-img-wrapper")!;
+    const titleContainer = document.querySelector(".slide-title")!;
+    const descriptionContainer = document.querySelector(".slide-description")!;
+    const counterContainer = document.querySelector(".count")!;
+
+    const currentTitle = titleContainer.querySelector("h1")!;
+    const currentDescription = Array.from(descriptionContainer.querySelectorAll("p")).at(-1)!;
+    const currentCounter = counterContainer.querySelector("p")!;
+
+    const newSlide = createSlide(currentSlideRef.current, direction);
+    const newMainWrapper = createMainImageWrapper(currentSlideRef.current, direction);
+    const [newTitle, newDescription, newCounter] = createTextElements(currentSlideRef.current, direction);
+
+    gsap.set(newDescription, { clearProps: "all" });
+
+    slider.appendChild(newSlide);
+    mainImageContainer.appendChild(newMainWrapper);
+    titleContainer.appendChild(newTitle);
+    descriptionContainer.appendChild(newDescription);
+    counterContainer.appendChild(newCounter);
+
+    gsap.set(newMainWrapper.querySelector("img"), {
+      y: direction === "down" ? "-50%" : "50%",
+    });
+
+    gsap.timeline({
+      onComplete: () => {
+        [currentSlideElement, currentMainWrapper, currentTitle, currentCounter, currentDescription].forEach(el =>
+          el?.remove()
+        );
+        isAnimatingRef.current = false;
+      },
+    })
+      .to(newSlide.querySelector(".slide-bg-img"), {
+        clipPath:
+          direction === "down"
+            ? "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)"
+            : "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 1,
+        ease: CustomEase.create("custom", ".87, 0, .13, 1"),
+      }, 0)
+      .to(currentSlideElement.querySelector("img"), {
+        scale: 1.5,
+        duration: 1,
+        ease: CustomEase.create("custom", ".87, 0, .13, 1"),
+      }, 0)
+      .to(newMainWrapper, {
+        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        duration: 1,
+        ease: CustomEase.create("custom", ".87, 0, .13, 1"),
+      }, "<")
+      .to(newMainWrapper.querySelector("img"), {
+        y: "0%",
+        duration: 1,
+        ease: CustomEase.create("custom", ".87, 0, .13, 1"),
+      }, 0)
+      .to(currentTitle, { y: direction === "down" ? -50 : 50, duration: 1, ease: CustomEase.create("custom", ".87, 0, .13, 1") }, 0)
+      .to(newTitle, { y: 0, duration: 1, ease: CustomEase.create("custom", ".87, 0, .13, 1") }, 0)
+      .to(currentDescription, { y: direction === "down" ? -20 : 20, opacity: 0, duration: 1, ease: CustomEase.create("custom", ".87, 0, .13, 1") }, 0)
+      .to(newDescription, { y: 0, opacity: 1, duration: 1, ease: CustomEase.create("custom", ".87, 0, .13, 1") }, 0)
+      .to(currentCounter, { y: direction === "down" ? -18 : 18, duration: 1, ease: CustomEase.create("custom", ".87, 0, .13, 1") }, 0)
+      .to(newCounter, { y: 0, duration: 1, ease: CustomEase.create("custom", ".87, 0, .13, 1") }, 0);
+  }
+
+  /** Handle scroll/touch */
+  useEffect(() => {
+    let lastScrollTime = 0;
+
+    const handleScroll = (direction: string) => {
       const now = Date.now();
-      if (isAnimating || !scrollAllowed) return;
+      if (isAnimatingRef.current) return;
       if (now - lastScrollTime < 1000) return;
       lastScrollTime = now;
       animateSlide(direction);
-    }
+    };
 
     const wheelHandler = (e: WheelEvent) => {
       e.preventDefault();
-      const direction = e.deltaY > 0 ? "down" : "up";
-      handleScroll(direction);
+      handleScroll(e.deltaY > 0 ? "down" : "up");
     };
 
     const touchMoveHandler = (e: TouchEvent) => {
       e.preventDefault();
-      const dy = touchStartY - e.touches[0].clientY;
-      if (Math.abs(dy) > 10) {
-        handleScroll(dy > 0 ? "down" : "up");
-      }
+      const dy = touchStartY.current - e.touches[0].clientY;
+      if (Math.abs(dy) > 10) handleScroll(dy > 0 ? "down" : "up");
     };
 
+    const touchStartHandler = (e: TouchEvent) => (touchStartY.current = e.touches[0].clientY);
+
     window.addEventListener("wheel", wheelHandler, { passive: false });
-    window.addEventListener("touchstart", (e) => (touchStartY = e.touches[0].clientY));
+    window.addEventListener("touchstart", touchStartHandler);
     window.addEventListener("touchmove", touchMoveHandler, { passive: false });
 
     return () => {
       window.removeEventListener("wheel", wheelHandler);
+      window.removeEventListener("touchstart", touchStartHandler);
       window.removeEventListener("touchmove", touchMoveHandler);
     };
   }, []);
@@ -291,12 +226,27 @@ export default function EventSlider() {
             <p>{events[0].description}</p>
           </div>
         </div>
+
+        {/* Timeline buttons */}
+        <div className="slider-timeline">
+          {events.map((event, index) => (
+            <button
+              key={index}
+              onClick={() =>
+                animateSlide(index + 1 > currentSlideRef.current ? "down" : "up", index + 1)
+              }
+              className={currentSlideRef.current === index + 1 ? "active" : ""}
+            >
+              {event.name}
+            </button>
+          ))}
+        </div>
       </div>
     </>
   );
 }
 
-/** All Events Array */
+/** Events Array */
 const events = [
   { name: "TurnCoat Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
   { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },

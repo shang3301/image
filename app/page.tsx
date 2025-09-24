@@ -54,6 +54,9 @@ export default function Home() {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" >
           </iframe>
         </div>
+          <div className="register">
+            <p><a href="">Register Here !</a></p>
+          </div>
       </div>
 
     </div>
