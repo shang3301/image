@@ -1043,6 +1043,7 @@ a, p {
   padding: 0.25rem 0.5rem;
   background-color: transparent;
   border: none;
+  font-weight: 600;
 }
 
 .slider-timeline button:hover {
@@ -1052,9 +1053,9 @@ a, p {
 }
 
 .slider-timeline button:active{
-  color: #fff;
-  font-weight: 600;
+  color: #ffffff17;
   border-left: 2px solid #fff;
+  background-color: #ffffff09;
 }
 
 

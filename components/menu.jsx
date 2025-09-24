@@ -184,7 +184,7 @@ const Menu = () => {
     <div className="menu">
       <nav className="transparent-nav">
         <div className="logo">
-          <a href="#">Void Construct</a>
+          <a href="#">Technolympics</a>
         </div>
         <div className="menu-toggle" onClick={() => (isOpen ? closeMenu() : openMenu())}>
           <p id="menu-open" ref={menuOpenRef}>Menu</p>
@@ -228,11 +228,11 @@ const Menu = () => {
           </div>
           <div className="menu-footer">
             <div className="col-lg">
-              <a href="#">Run Sequence</a>
+              <a href="#">Code</a>
             </div>
             <div className="col-sm">
-              <a href="#">Origin</a>
-              <a href="#">Join Signal</a>
+              <a href="#">Create</a>
+              <a href="#">Innovate</a>
             </div>
           </div>
         </div>
