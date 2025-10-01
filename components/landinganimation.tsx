@@ -51,13 +51,13 @@ export default function LandingAnimation() {
         ], { y: "0%" });
 
         gsap.set(".landing-split-overlay .landing-intro-title", {
-          x: isMobile ? "0em" : "5em",
+          x: isMobile ? "0em" : "3em",
           y: isMobile ? "-2em" : "-2em",
         });
 
         gsap.set(".landing-split-overlay .landing-outro-title .char", {
           x: isMobile ? "0em" : "3em",
-          y: isMobile ? "3em" : "2em",
+          y: isMobile ? "2em" : "2em",
         });
 
         const tl = gsap.timeline({ defaults: { ease: "thop" } });
@@ -84,13 +84,13 @@ export default function LandingAnimation() {
             stagger: 0.075,
           }, 2.5)
           .to(".landing-preloader .landing-intro-title", {
-            x: isMobile ? "-0em" : "-5em",
+            x: isMobile ? "-0em" : "-3em",
             y: isMobile ? "-2em" : "-2em",
             duration: 0.75,
           }, 4.5)
           .to(".landing-preloader .landing-outro-title .char", {
             x: isMobile ? "0em" : "3em",
-            y: isMobile ? "3em" : "2em",
+            y: isMobile ? "2em" : "2em",
             duration: 0.75,
             onComplete: () => {
               gsap.set(".landing-preloader", {
