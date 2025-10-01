@@ -480,7 +480,7 @@ nav p#logo {
 }
 
 /* Responsive */
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
   h1 {
     font-size: 2rem;
   }
