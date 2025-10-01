@@ -1063,7 +1063,7 @@ a, p {
 .slider-timeline-mobile {
   display: none; /* will be shown via media query */
   position: relative;
-  top: 10%;
+  top: 15%;
   right: 5%;
   z-index: 3;
   border-radius: 6px;
