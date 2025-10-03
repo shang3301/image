@@ -201,7 +201,7 @@ const Menu = () => {
             <div className="col-sm">
               <div className="menu-links">
                 {[
-                  { label: "Home", img: "images/6.jpg", href: "./" },
+                  { label: "Home", img: "images/10.jpg", href: "./" },
                   { label: "Events", img: "images/3.jpg", href: "./events" },
                   { label: "Gallery", img: "images/4.jpg", href: "./gallery" },
                   { label: "Team", img: "images/5.jpg", href:"./team"},
