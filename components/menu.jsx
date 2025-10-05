@@ -2,6 +2,7 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useTransitionRouter } from "next-view-transitions";
+import Cursor from "@/components/cursor";
 
 const Menu = () => {
   const containerRef = useRef(null);
@@ -182,6 +183,7 @@ const Menu = () => {
 
   return (
     <div className="menu">
+    <Cursor/>
       <nav className="transparent-nav">
         <div className="logo">
           <a href="#">Technolympics</a>

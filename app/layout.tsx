@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Image from 'next/image';
 import Menu from "@/components/menu";
+import Cursor from "@/components/cursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,10 +28,9 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        
         <Menu/>
         {children}
-        
+        <Cursor/>
         </body>
     </html>
   );

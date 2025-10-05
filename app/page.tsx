@@ -1,5 +1,6 @@
 import LandingAnimation from "@/components/landinganimation";
 
+
 export default function Home() {
   return (
     <div className="landing">

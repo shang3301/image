@@ -21,6 +21,35 @@ html, body {
 
 body {
   font-family: "DM Sans", sans-serif;
+  cursor: none;
+}
+
+* {
+  cursor: none !important;
+}
+
+.inverted-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease-out;
+  z-index: 99999;
+}
+
+.inverted-cursor.hovered {
+  width: 35px;
+  height: 35px;
+  cursor: none;
+}
+
+.inverted-cursor {
+  background: rgba(255, 255, 255, 0.0000000000000000000000001);
+  backdrop-filter: invert(1);
 }
 
 img {
@@ -101,7 +130,7 @@ nav p#logo {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99999; /* Higher than any landing overlay */
+  z-index: 999999; /* Higher than any landing overlay */
   pointer-events: auto;
 }
 
@@ -699,7 +728,7 @@ a, p {
   width: 100%;
   text-align: center;
   pointer-events: none;
-  z-index: 10000;
+  z-index: 1000;
   font-size: 36px;
   font-weight: bold;
 }
