@@ -186,7 +186,7 @@ const Menu = () => {
     <Cursor/>
       <nav className="transparent-nav">
         <div className="logo">
-          <a href="#">Technolympics</a>
+          <a href="#">Image</a>
         </div>
         <div className="menu-toggle" onClick={() => (isOpen ? closeMenu() : openMenu())}>
           <p id="menu-open" ref={menuOpenRef}>Menu</p>
@@ -230,11 +230,11 @@ const Menu = () => {
           </div>
           <div className="menu-footer">
             <div className="col-lg">
-              <a href="#">Code</a>
+              <a href="#"></a>
             </div>
             <div className="col-sm">
-              <a href="#">Create</a>
-              <a href="#">Innovate</a>
+              <a href="#">Vasudev</a>
+              <a href="#">Kutumbakam</a>
             </div>
           </div>
         </div>

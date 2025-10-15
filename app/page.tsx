@@ -9,7 +9,7 @@ export default function Home() {
       {/* Preloader */}
       <div className="landing-preloader">
         <div className="landing-intro-title">
-          <h1>TECHNOLYMPICS</h1>
+          <h1>IMAGE</h1>
         </div>
         <div className="landing-outro-title">
           <h1>IS BACK</h1>
@@ -19,7 +19,7 @@ export default function Home() {
       {/* Split Overlay */}
       <div className="landing-split-overlay">
         <div className="landing-intro-title">
-          <h1>TECHNOLYMPICS</h1>
+          <h1>IAMGE</h1>
         </div>
         <div className="landing-outro-title">
           <h1>IS BACK</h1>
@@ -29,13 +29,13 @@ export default function Home() {
       {/* Tags */}
       <div className="landing-tags-overlay">
         <div className="landing-tag landing-tag-1">
-          <p>IMRPROVISE. ADAPT. OVERCOME.</p>
+          <p>Vasudev Kutumbakam</p>
         </div>
         <div className="landing-tag landing-tag-2">
           <p>CODE. CREATE. INNOVATE. </p>
         </div>
         <div className="landing-tag landing-tag-3">
-          <p>TECHNOLYMPICS 2025</p>
+          <p>IMAGE 2025</p>
         </div>
       </div>
 
