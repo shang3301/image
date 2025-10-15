@@ -45,7 +45,7 @@ export default function Home() {
         </nav>
 
         <div className="landing-hero-img">
-          <img src="/images/sidecharacter.jpg" alt="Hero" />
+          <img src="images/2.jpg" alt="background" />
         </div>
 
         <div className="landing-card">
