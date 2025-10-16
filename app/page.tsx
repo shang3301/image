@@ -32,7 +32,7 @@ export default function Home() {
           <p>Vasudev Kutumbakam</p>
         </div>
         <div className="landing-tag landing-tag-2">
-          <p>CODE. CREATE. INNOVATE. </p>
+          <p>CODE. CREATE. INNOVATE.</p>
         </div>
         <div className="landing-tag landing-tag-3">
           <p>IMAGE 2025</p>
