@@ -21,7 +21,6 @@ html, body {
 
 body {
   font-family: "DM Sans", sans-serif;
-  cursor: none;
 }
 
 * {
@@ -510,6 +509,50 @@ nav p#logo {
 
 /* Responsive */
 @media (max-width: 1000px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .landing-card {
+    width: 75%;
+  }
+
+  .landing-card h1 {
+    font-size: 2.5rem;
+  }
+
+  .landing-intro-title .char,
+  .landing-outro-title .char {
+    margin-top: 0.5rem;
+  }
+
+  .landing-intro-title{
+    top: 35%;
+  }
+
+  .landing-outro-title{
+    top: 40%;
+  }
+
+  .landing-tag-1 {
+  top: 15%;
+  left: 15%;
+  }
+
+  .landing-tag-2 {
+    bottom: 10%;
+    left: 15%;
+  }
+
+  .landing-tag-3 {
+    bottom: 20%;
+    right: 15%;
+  }
+
+}
+
+
+/* Responsive */
+@media (max-height: 700px) {
   h1 {
     font-size: 2rem;
   }
