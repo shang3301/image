@@ -244,7 +244,7 @@ export default function EventSlider() {
 </div>
 {/* Desktop Timeline Buttons */}
 <div className="slider-timeline-2">
-  {events.map((event, index) => (
+  {alsoevents.map((event, index) => (
     <button
       key={index}
       onClick={() =>
