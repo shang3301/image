@@ -242,6 +242,20 @@ export default function EventSlider() {
     </button>
   ))}
 </div>
+{/* Desktop Timeline Buttons */}
+<div className="slider-timeline-2">
+  {events.map((event, index) => (
+    <button
+      key={index}
+      onClick={() =>
+        animateSlide(index + 1 > currentSlideRef.current ? "down" : "up", index + 1)
+      }
+      className={currentSlideRef.current === index + 1 ? "active" : ""}
+    >
+      {event.name}
+    </button>
+  ))}
+</div>
 
 {/* Mobile Timeline Dropdown */}
 <div className="slider-timeline-mobile">
@@ -254,7 +268,7 @@ export default function EventSlider() {
       )
     }
   >
-    {events.map((event, index) => (
+    {mobilevents.map((event, index) => (
       <option key={index} value={index + 1}>
         {event.name}
       </option>
@@ -267,7 +281,59 @@ export default function EventSlider() {
 }
 
 /** Events Array */
+
+const mobilevents = [
+  { name: "TurnCoat Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
+  { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },
+  { name: "RoboMaze", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet felis in purus dapibus tincidunt." },
+  { name: "Rube Goldberg Machine", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi." },
+  { name: "ChemCraft 3D", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis ac elit vehicula pretium." },
+  { name: "ChemSense", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sapien ut sapien fermentum volutpat." },
+  { name: "GameCraft", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porttitor justo vitae lacus faucibus, vitae egestas magna rutrum." },
+  { name: "Virtue Vibes", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget libero ac lacus lacinia varius." },
+  { name: "Webolution", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, lectus ut aliquam sagittis, nibh velit dignissim magna." },
+  { name: "CrypteX", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec neque vel nisi tincidunt sodales." },
+  { name: "Top Coders", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, libero eget pretium porttitor." },
+  { name: "Battle of Brains", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Mauris nec felis." },
+  { name: "GameSpark", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo eu nisl dignissim malesuada." },
+  { name: "Budgetarium", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies, est a tempus mattis." },
+  { name: "Bid Blitz", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis ligula non risus porttitor, vel egestas orci commodo." },
+  { name: "TurnCoat Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
+  { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },
+  { name: "RoboMaze", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet felis in purus dapibus tincidunt." },
+  { name: "Rube Goldberg Machine", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi." },
+  { name: "ChemCraft 3D", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis ac elit vehicula pretium." },
+  { name: "ChemSense", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sapien ut sapien fermentum volutpat." },
+  { name: "GameCraft", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porttitor justo vitae lacus faucibus, vitae egestas magna rutrum." },
+  { name: "Virtue Vibes", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget libero ac lacus lacinia varius." },
+  { name: "Webolution", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, lectus ut aliquam sagittis, nibh velit dignissim magna." },
+  { name: "CrypteX", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec neque vel nisi tincidunt sodales." },
+  { name: "Top Coders", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, libero eget pretium porttitor." },
+  { name: "Battle of Brains", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Mauris nec felis." },
+  { name: "GameSpark", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo eu nisl dignissim malesuada." },
+  { name: "Budgetarium", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies, est a tempus mattis." },
+  { name: "Bid Blitz", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis ligula non risus porttitor, vel egestas orci commodo." },
+]
+
 const events = [
+  { name: "TurnCoat Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
+  { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },
+  { name: "RoboMaze", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet felis in purus dapibus tincidunt." },
+  { name: "Rube Goldberg Machine", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi." },
+  { name: "ChemCraft 3D", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis ac elit vehicula pretium." },
+  { name: "ChemSense", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sapien ut sapien fermentum volutpat." },
+  { name: "GameCraft", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porttitor justo vitae lacus faucibus, vitae egestas magna rutrum." },
+  { name: "Virtue Vibes", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget libero ac lacus lacinia varius." },
+  { name: "Webolution", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, lectus ut aliquam sagittis, nibh velit dignissim magna." },
+  { name: "CrypteX", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec neque vel nisi tincidunt sodales." },
+  { name: "Top Coders", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, libero eget pretium porttitor." },
+  { name: "Battle of Brains", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Mauris nec felis." },
+  { name: "GameSpark", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo eu nisl dignissim malesuada." },
+  { name: "Budgetarium", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies, est a tempus mattis." },
+  { name: "Bid Blitz", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis ligula non risus porttitor, vel egestas orci commodo." },
+];
+
+const alsoevents = [
   { name: "TurnCoat Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
   { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },
   { name: "RoboMaze", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet felis in purus dapibus tincidunt." },
