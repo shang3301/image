@@ -56,7 +56,7 @@ export default function EventSlider() {
 
   /** Helper: create text elements */
   function createTextElements(slideNumber: number, direction: string) {
-    const event = events[slideNumber - 1];
+    const event = allevents[slideNumber - 1];
 
     const newTitle = document.createElement("h1");
     newTitle.textContent = event.name;
@@ -84,11 +84,11 @@ export default function EventSlider() {
     } else {
       currentSlideRef.current =
         direction === "down"
-          ? currentSlideRef.current === events.length
+          ? currentSlideRef.current === allevents.length
             ? 1
             : currentSlideRef.current + 1
           : currentSlideRef.current === 1
-          ? events.length
+          ? allevents.length
           : currentSlideRef.current - 1;
     }
 
@@ -201,7 +201,7 @@ export default function EventSlider() {
         <p>All Projects</p>
         <div className="slider-counter">
           <div className="count"><p>1</p></div>
-          <p>/ {events.length}</p>
+          <p>/ {allevents.length}</p>
         </div>
       </div>
 
@@ -248,7 +248,7 @@ export default function EventSlider() {
     <button
       key={index}
       onClick={() =>
-        animateSlide(index + 1 > currentSlideRef.current ? "down" : "up", index + 1)
+        animateSlide(index + events.length + 1 > currentSlideRef.current ? "down" : "up", index + events.length + 1)
       }
       className={currentSlideRef.current === index + 1 ? "active" : ""}
     >
@@ -283,7 +283,7 @@ export default function EventSlider() {
 /** Events Array */
 
 const mobilevents = [
-  { name: "TurnCoat Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
+  { name: " Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
   { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },
   { name: "RoboMaze", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet felis in purus dapibus tincidunt." },
   { name: "Rube Goldberg Machine", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi." },
@@ -298,7 +298,7 @@ const mobilevents = [
   { name: "GameSpark", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo eu nisl dignissim malesuada." },
   { name: "Budgetarium", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies, est a tempus mattis." },
   { name: "Bid Blitz", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis ligula non risus porttitor, vel egestas orci commodo." },
-  { name: "TurnCoat Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
+  { name: "TurnCoat", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
   { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },
   { name: "RoboMaze", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet felis in purus dapibus tincidunt." },
   { name: "Rube Goldberg Machine", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi." },
@@ -316,7 +316,7 @@ const mobilevents = [
 ]
 
 const events = [
-  { name: "TurnCoat Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
+  { name: "TurnCoat", description: " ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
   { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },
   { name: "RoboMaze", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet felis in purus dapibus tincidunt." },
   { name: "Rube Goldberg Machine", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi." },
@@ -334,7 +334,7 @@ const events = [
 ];
 
 const alsoevents = [
-  { name: "TurnCoat Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
+  { name: "Debate", description: "Lorem dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
   { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },
   { name: "RoboMaze", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet felis in purus dapibus tincidunt." },
   { name: "Rube Goldberg Machine", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi." },
@@ -350,3 +350,5 @@ const alsoevents = [
   { name: "Budgetarium", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies, est a tempus mattis." },
   { name: "Bid Blitz", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis ligula non risus porttitor, vel egestas orci commodo." },
 ];
+
+const allevents = [...events, ...alsoevents];
