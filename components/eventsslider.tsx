@@ -283,37 +283,215 @@ export default function EventSlider() {
 /** Events Array */
 
 const mobilevents = [
-  { name: " Debate", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
-  { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },
-  { name: "RoboMaze", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet felis in purus dapibus tincidunt." },
-  { name: "Rube Goldberg Machine", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi." },
-  { name: "ChemCraft 3D", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis ac elit vehicula pretium." },
-  { name: "ChemSense", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sapien ut sapien fermentum volutpat." },
-  { name: "GameCraft", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porttitor justo vitae lacus faucibus, vitae egestas magna rutrum." },
-  { name: "Virtue Vibes", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget libero ac lacus lacinia varius." },
-  { name: "Webolution", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, lectus ut aliquam sagittis, nibh velit dignissim magna." },
-  { name: "CrypteX", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec neque vel nisi tincidunt sodales." },
-  { name: "Top Coders", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, libero eget pretium porttitor." },
-  { name: "Battle of Brains", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Mauris nec felis." },
-  { name: "GameSpark", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo eu nisl dignissim malesuada." },
-  { name: "Budgetarium", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies, est a tempus mattis." },
-  { name: "Bid Blitz", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis ligula non risus porttitor, vel egestas orci commodo." },
-  { name: "TurnCoat", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in nulla sed augue bibendum varius." },
-  { name: "Ecologic Models", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec arcu sed urna suscipit finibus." },
-  { name: "RoboMaze", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet felis in purus dapibus tincidunt." },
-  { name: "Rube Goldberg Machine", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse potenti. Nulla facilisi." },
-  { name: "ChemCraft 3D", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis ac elit vehicula pretium." },
-  { name: "ChemSense", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet sapien ut sapien fermentum volutpat." },
-  { name: "GameCraft", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer porttitor justo vitae lacus faucibus, vitae egestas magna rutrum." },
-  { name: "Virtue Vibes", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget libero ac lacus lacinia varius." },
-  { name: "Webolution", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut blandit, lectus ut aliquam sagittis, nibh velit dignissim magna." },
-  { name: "CrypteX", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec neque vel nisi tincidunt sodales." },
-  { name: "Top Coders", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, libero eget pretium porttitor." },
-  { name: "Battle of Brains", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat. Mauris nec felis." },
-  { name: "GameSpark", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel justo eu nisl dignissim malesuada." },
-  { name: "Budgetarium", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ultricies, est a tempus mattis." },
-  { name: "Bid Blitz", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam venenatis ligula non risus porttitor, vel egestas orci commodo." },
-]
+  {
+    name: "Symphony",
+    description: `A western music competition for classes IX–XII, where teams perform a self-composed or improvised English song using only live instruments — no backing tracks or autotune.<br></br>
+Participants must announce their song and artist before performing. The event emphasizes vocal quality, instrumental synchronization, and creative arrangement.<br></br>
+Judged on: Vocal performance, instrumental skills, stage presence, and overall audience engagement.<br></br>
+<a href="https://forms.gle/sahitZNqHFSCtue57" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Nrityanjali",
+    description: `Fusion dance competition for classes III–V combining folk and western dance forms of one Indian state.<br></br>
+Participants must maintain cultural authenticity in costumes and choreography — no film songs or inappropriate moves are allowed. Props and digital backgrounds are prohibited.<br></br>
+Judged on: Dance technique, choreography, group coordination, costume, and overall presentation.<br></br>
+<a href="https://forms.gle/dB8F45DLNrek3sv67" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Sur Sangam",
+    description: `A beautiful blend of Indian Classical/Light and Western music for classes III–V. Teams present a unique fusion piece that integrates ragas with western lyrics or instruments.<br></br>
+Only live instruments are allowed; no background music or karaoke tracks. Participants must perform in kurta-pyjama attire.<br></br>
+Judged on: Composition, melody, rhythm, and synchronization between Indian and Western elements.<br></br>
+<a href="https://forms.gle/qzpSE3o5DUSpXjQ76" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Kitchen Geniuses",
+    description: `A creative cooking competition for classes IV–V. Teams prepare a healthy, nutritious platter within 45 minutes, bringing pre-chopped ingredients and presenting it attractively.<br></br>
+The dish must have an original name and be accompanied by a display card of ingredients and nutritional value.<br></br>
+Judged on: Neatness, creativity, nutritional value, taste, and knowledge of ingredients.<br></br>
+<a href="https://forms.gle/EjN5ntHr33yVE4SB6" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "TED Talk",
+    description: `Public speaking challenge for classes IX–XII where students deliver a 4–5 minute TED-style talk on the theme “Global Diversity: Problems and Possibilities in the Modern World”.<br></br>
+Participants are encouraged to use personal stories or real-life examples and must present original content only.<br></br>
+Judged on: Clarity of message, insight, delivery, and audience engagement.<br></br>
+<a href="https://forms.gle/H4yxgbTzDV7SRjAE8" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "बातों–बातों में",
+    description: `A Hindi podcast competition for classes VIII–IX. Participants record a short podcast on themes such as “विश्वशांति”, “पर्यावरण संरक्षण”, or “हमारे बुजुर्ग: हमारी धरोहर”.<br></br>
+The podcast must be original, fact-based, and expressive. Proper voice modulation and fluency are key to scoring well.<br></br>
+Judged on: Content originality, fluency, confidence, and pronunciation.<br></br>
+<a href="https://forms.gle/WEnHg3S8CA4PHnFg8" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Poetic Fantasy",
+    description: `An English poetry writing contest for classes VI–VIII based on the theme “Peace and Harmony”.<br></br>
+Students are given 20 words and must use at least 10 in their original poem of 20–25 lines, neatly written and creatively expressed.<br></br>
+Judged on: Theme relevance, poetic style, vocabulary, and presentation.<br></br>
+<a href="https://forms.gle/UtmwbW3j8n6Mb65i6" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Sanskrit Shloka",
+    description: `Chanting competition for classes VI–VIII celebrating traditional Sanskrit literature.<br></br>
+Participants choose and present shlokas emphasizing pronunciation, rhythm, and expression. Use of Indian instruments is optional.<br></br>
+Judged on: Pronunciation, confidence, melody, and presentation style.<br></br>
+<a href="https://forms.gle/vY4SR7zeCYjvT6R9A" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Chitrashala",
+    description: `Junior Art Competitions for classes III–V featuring three sub-events:<br></br>
+- “Reimagine & Recreate” (Recycling Art)<br></br>
+- “Paper Montage” (Collage Creation)<br></br>
+- “Canvas Painting” (We Are All Connected)<br></br>
+Students express creativity using sustainable materials while promoting eco-consciousness.<br></br>
+Judged on: Originality, creativity, neatness, and theme relevance.<br></br>
+<a href="https://forms.gle/a6VVFdMtfJ3J9baU9" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Aesthetic Moves",
+    description: `Senior Art Competitions for classes VI–XII, featuring:<br></br>
+- Indian Renaissance Impact (Watercolor)<br></br>
+- Statuette (Clay Modelling)<br></br>
+- Impressionist Landscape (Knife Painting)<br></br>
+- Aesthetical Expression (Pop Art)<br></br>
+Encourages visual storytelling and artistic depth through themed techniques.<br></br>
+Judged on: Originality, colour harmony, relevance to theme, and artistic execution.<br></br>
+<a href="https://forms.gle/pPNvAaehx8XEtWqz6" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "GameCraft",
+    description: `Coding competition for classes IV–VI using Scratch 3.0 Offline Editor. Participants create interactive games on a topic revealed on the spot.<br></br>
+Games should be simple, educational, and visually appealing.<br></br>
+Judged on: Creativity, gameplay, design, and educational value.<br></br>
+<a href="https://forms.gle/StuvutrWQVWrdxfh9" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Webolution",
+    description: `Web development event for classes IX–XII where teams create responsive websites using HTML, CSS, and JavaScript.<br></br>
+Projects must include at least four pages and interactive elements such as forms or animations.<br></br>
+Judged on: Design, functionality, coding practices, and originality.<br></br>
+<a href="https://forms.gle/oz2yGNRKFSkqxqcYA" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "CrypteX",
+    description: `A thrilling 24-hour online cryptic hunt on Discord for classes IX–XII. Participants decode clues hidden in images, riddles, and web trails to advance levels.<br></br>
+Google is the only ally in this high-speed puzzle chase.<br></br>
+Judged on: Logical reasoning, speed, and problem-solving.<br></br>
+<a href="https://forms.gle/YCmg6FCPSDfUMcAd8" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "ChemCraft 3D",
+    description: `Science-meets-design event for classes X–XII. Teams create 3D molecular models in Blender and submit a report covering structure, geometry, and uses.<br></br>
+Combines chemistry knowledge with visualization skills.<br></br>
+Judged on: Scientific accuracy, creativity, and report quality.<br></br>
+<a href="https://forms.gle/WhTVh3jPKwKg9r587" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Vista View",
+    description: `A sustainability-driven art event for classes IX–XII. Teams design a 3D wall installation using waste materials under the theme “Waste to Art for Sustainable Creation”.<br></br>
+Encourages upcycling and artistic innovation.<br></br>
+Judged on: Creativity, originality, and thematic relevance.<br></br>
+<a href="https://forms.gle/uR55HQSbNumMRY526" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Pulse WIthin",
+    description: `A high-energy western dance competition for classes VI–IX. Teams perform expressive and theme-based dances to pre-recorded music that reflects rhythm, creativity, and synchronization.<br></br>
+Costumes must be appropriate, and Bollywood tracks are not allowed. Props may be used, but no phones or changing rooms are provided.<br></br>
+Judged on: Choreography, expression, synchronization, creativity, and presentation.<br></br>
+<a href="https://forms.gle/Y7SmWZ4zfLD2hhvP9" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Nukkad Natak",
+    description: `A Hindi street play competition for classes IV–V on the theme ‘एक सामंजस्यपूर्ण राष्ट्र’ (A Harmonious Nation). Students dramatize social issues promoting unity and national values.<br></br>
+Teams must bring their own props. Use of fire or water on stage is strictly prohibited, and adult assistance is not allowed.<br></br>
+Judged on: Dialogue delivery, expressions, theme relevance, and audience impact.<br></br>
+<a href="https://forms.gle/vPUEhxMZUbKRRB5aA" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Rube It Up!",
+    description: `An engineering and creativity challenge for classes IX–XII where teams build a Rube Goldberg Machine — a chain reaction invention that performs a simple task in a complex and amusing way.<br></br>
+Machines should be safe, stable, and within 1m³ size. The final task is to knock down a stack of paper cups using only mechanical reactions.<br></br>
+Judged on: Creativity, complexity, engineering design, and presentation clarity.<br></br>
+<a href="https://forms.gle/i2SQTMLGK39yQ3yB6" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "EcoInnovators",
+    description: `A model-making event for classes VI–XI encouraging innovative solutions for sustainability. Teams create working models based on the theme “Innovation for a Greener and Sustainable Future”.<br></br>
+Only biodegradable or recycled materials are allowed. Teams present their models within 5 minutes.<br></br>
+Judged on: Creativity, scientific principle, practicality, and sustainability impact.<br></br>
+<a href="https://forms.gle/VkHbceZZrPw3nz5q9" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Reel Harmony",
+    description: `A multimedia storytelling competition for classes VII–VIII. Participants create a 3-minute animated short film on a given topic using OpenShot software.<br></br>
+Each team narrates their story live and synchronizes it with visuals, background music, and subtitles.<br></br>
+Judged on: Creativity, technical execution, storytelling, and theme connection.<br></br>
+<a href="https://forms.gle/Do2iPgwhqJRdQ8pE7" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "GameSpark",
+    description: `A digital game design competition for classes IX–XII based on the theme “Duality – Two opposite forces coexist, and you must balance them”.<br></br>
+Participants use Unity or Unreal Engine and present their game live to the judges. Games must be original and credited properly.<br></br>
+Judged on: Originality, gameplay mechanics, creativity, and user experience.<br></br>
+<a href="https://forms.gle/gxL3kqXmxEjCANtU7" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Top Coders",
+    description: `A programming contest for classes IX–XII testing problem-solving, logic, and coding efficiency in Python 3.13.<br></br>
+Teams solve multiple coding challenges within 1 hour using only the software provided by the school.<br></br>
+Judged on: Accuracy, efficiency, creativity in solutions, and clean code structure.<br></br>
+<a href="https://forms.gle/5gr6zsz6gBUeqrEH9" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "IQrypt",
+    description: `A science and technology quiz for classes IX–XII. Teams compete through written prelims and live finals covering topics from science, innovation, and current technology.<br></br>
+Finalists face multiple rounds of diverse, fast-paced questions on emerging scientific trends.<br></br>
+Judged on: Knowledge depth, teamwork, and quick thinking.<br></br>
+<a href="https://forms.gle/Nbkx2jvWz8RuqHd18" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Bid Blitz",
+    description: `A commerce and strategy event for classes X–XII modeled after an auction game. Teams use virtual funds to bid for players strategically to build the best team lineup.<br></br>
+Critical thinking, finance sense, and teamwork play key roles in success.<br></br>
+Judged on: Auction strategy, budget balance, and final team composition.<br></br>
+<a href="https://forms.gle/81U3stCbeXUuzJpz6" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Think Tank",
+    description: `A thought-provoking group discussion event for classes IX–XII based on the Image 2025 theme “वसुधैव कुटुम्बकम्”.<br></br>
+The preliminary round topic is “Bridging the Gap: Reducing Global Inequalities for a Harmonious Future”. The final topic is revealed on the spot.<br></br>
+Judged on: Critical thinking, originality, relevance, communication, and confidence.<br></br>
+<a href="https://forms.gle/kHXxt2XZta7qudf89" target="_blank">Click here to register</a>`
+  },
+  {
+    name: "Navras",
+    description: `A celebration of performing arts combining music, dance, and expression. Represents the essence of cultural vibrancy through school performances under the Image 2025 banner.<br></br>
+Includes events like Symphony, Nrityanjali, and Sur Sangam showcasing emotional depth and stage energy.`
+  },
+  {
+    name: "Navrang",
+    description: `An artistic segment highlighting creativity and colour through visual arts.<br></br>
+Includes Chitrashala and Aesthetic Moves — encouraging young artists to paint, sculpt, and innovate with sustainable, meaningful artwork.`
+  },
+  {
+    name: "WordWeave",
+    description: `The literary showcase of Image 2025, blending expression through words, speeches, and podcasts.<br></br>
+Includes events like TED Talk, Hindi Podcast (बातों–बातों में), and Flights of Poetic Fantasy — nurturing eloquence, writing, and public speaking.`
+  },
+  {
+    name: "Aureus",
+    description: `The commerce and critical thinking category of Image 2025.<br></br>
+Includes events such as Bid Blitz and Think Tank, designed to foster strategic reasoning, decision-making, and economic awareness among students.`
+  },
+  {
+    name: "Technolympics",
+    description: `The ultimate STEM fest combining creativity, coding, and innovation under one banner.<br></br>
+Features events such as GameCraft, Webolution, CrypteX, ChemCraft 3D, and GameSpark — blending science, art, and technology for a sustainable digital future.`
+  }
+];
+
 const events = [
   {
     name: "Symphony",
