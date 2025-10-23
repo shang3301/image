@@ -1220,6 +1220,9 @@ a, p {
   .slider-timeline-mobile {
     display: block;
   }
+  *{
+    cursor: pointer !important;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1228,7 +1231,7 @@ a, p {
   }
 
   .slide-copy {
-    top: 25%;
+    top: 50%;
     left: 50%;
   }
 
