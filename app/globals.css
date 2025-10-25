@@ -23,10 +23,17 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
-* {
+/* Hide system cursor when real mouse is active */
+.has-mouse * {
   cursor: none !important;
 }
 
+/* Hide fake cursor when on touch/trackpad */
+.no-mouse .inverted-cursor {
+  display: none !important;
+}
+
+/* Base inverted cursor */
 .inverted-cursor {
   position: fixed;
   top: 0;
@@ -34,20 +41,19 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  pointer-events: none;
   mix-blend-mode: difference;
-  transition: transform 0.1s ease-out;
+  pointer-events: none;
   z-index: 99999;
+  transition: transform 0.15s ease-out, width 0.15s, height 0.15s;
 }
 
+/* Hover enlarge effect */
 .inverted-cursor.hovered {
-  width: 35px;
-  height: 35px;
-  cursor: none;
+  transform: scale(1.5);
 }
 
 .inverted-cursor {
-  background: rgba(255, 255, 255, 0.0000000000000000000000001);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: invert(1);
 }
 
@@ -162,7 +168,7 @@ nav p#logo {
 .menu-overlay {
   position: fixed;
   width: 100vw;
-  height: 100svh;
+  height: 100vh;
   background-color: #0f0f0f;
   z-index: 1;
 }
@@ -318,7 +324,7 @@ nav p#logo {
     font-size: 2rem;
   }
   .menu-items img {
-    max-height: 70svh;
+    max-height: 70vh;
     justify-content: center; /* 🔥 this centers vertically */
   }
 }
@@ -343,7 +349,7 @@ nav p#logo {
 .landing-tags-overlay {
   position: fixed;
   width: 100vw;
-  height: 100svh;
+  height: 100vh;
 }
 
 .landing-preloader,
@@ -391,7 +397,7 @@ nav p#logo {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 100svh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -793,7 +799,7 @@ a, p {
 
 /* Main Container */
 .container {  
-  min-height: 100dvh; /* Use dynamic vh unit */
+  min-height: 100vh; /* Use dynamic vh unit */
   overflow-y: auto;
   width: 100%;
   padding: 4rem 2rem;
@@ -897,9 +903,9 @@ a, p {
   .img-modal .img {
     min-width: 70vw;
     height: auto;
-    min-height: 70svh;
+    min-height: 70vh;
     max-width: 80vw;
-    max-height: 80svh;
+    max-height: 80vh;
   }
 
   .item-img {
@@ -997,7 +1003,7 @@ a, p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.125);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .slide-main-img {
@@ -1008,6 +1014,7 @@ a, p {
   width: 25%;
   height: 50%;
   z-index: 2;
+  filter: brightness(50%);
 }
 
 .slide-main-img-wrapper {
@@ -1219,9 +1226,6 @@ a, p {
   }
   .slider-timeline-mobile {
     display: block;
-  }
-  *{
-    cursor: pointer !important;
   }
 }
 
