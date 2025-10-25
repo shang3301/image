@@ -9,24 +9,54 @@ export default function Cursor() {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-const moveCursor = (e) => {
-  const cursorSize = cursor.offsetWidth / 2; // half of current width
-  cursor.style.left = `${e.clientX - cursorSize}px`;
-  cursor.style.top = `${e.clientY - cursorSize}px`;
-};
+    let usingMouse = false;
+    let lastTouchTime = 0;
 
+    const enableMouse = () => {
+      if (!usingMouse) {
+        usingMouse = true;
+        document.body.classList.add("has-mouse");
+        document.body.classList.remove("no-mouse");
+      }
+    };
+
+    const disableMouse = () => {
+      usingMouse = false;
+      document.body.classList.remove("has-mouse");
+      document.body.classList.add("no-mouse");
+    };
+
+    const moveCursor = (e) => {
+      if (Date.now() - lastTouchTime < 500) return; // ignore fake moves after touch
+      enableMouse();
+      const cursorSize = cursor.offsetWidth / 2;
+      cursor.style.left = `${e.clientX - cursorSize}px`;
+      cursor.style.top = `${e.clientY - cursorSize}px`;
+    };
+
+    const handleTouchStart = () => {
+      lastTouchTime = Date.now();
+      disableMouse();
+    };
 
     const handleHover = () => cursor.classList.add("hovered");
     const handleLeave = () => cursor.classList.remove("hovered");
 
-    window.addEventListener("mousemove", moveCursor);
+    // Listeners
+    window.addEventListener("mousemove", moveCursor, { passive: true });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+
     document.querySelectorAll("button, a, input, textarea").forEach((el) => {
       el.addEventListener("mouseenter", handleHover);
       el.addEventListener("mouseleave", handleLeave);
     });
 
+    // Default = assume touch/trackpad
+    disableMouse();
+
     return () => {
       window.removeEventListener("mousemove", moveCursor);
+      window.removeEventListener("touchstart", handleTouchStart);
       document.querySelectorAll("button, a, input, textarea").forEach((el) => {
         el.removeEventListener("mouseenter", handleHover);
         el.removeEventListener("mouseleave", handleLeave);
