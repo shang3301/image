@@ -220,20 +220,28 @@ const Menu = () => {
                 ))}
               </div>
               <div className="menu-socials">
-                {["Behance", "Dribbble", "LinkedIn", "Instagram"].map((name) => (
-                  <div className="social" key={name}>
-                    <a href="#">{name}</a>
-                  </div>
+                {[
+                  { name: "Behance", link: "https://behance.net/" },
+                  { name: "Dribbble", link: "https://dribbble.com/" },
+                  { name: "LinkedIn", link: "https://linkedin.com/in/" },
+                  { name: "Instagram", link: "https://www.instagram.com/cambridgenoida/" },
+                  { name: "Linktree", link: "https://linktr.ee/Image_2025" }
+                ].map(({ name, link }) => (
+                <div className="social" key={name}>
+                  <a href={link} target="_blank" rel="noopener noreferrer">
+                  {name}
+                  </a>
+                </div>
                 ))}
               </div>
-            </div>
+
           </div>
           <div className="menu-footer">
             <div className="col-lg">
               <a href="#"></a>
             </div>
             <div className="col-sm">
-              <a href="#">Vasudev</a>
+              <a href="#">Vasudhaiva</a>
               <a href="#">Kutumbakam</a>
             </div>
           </div>
