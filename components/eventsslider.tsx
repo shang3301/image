@@ -464,31 +464,6 @@ Judged on: Auction strategy, budget balance, and final team composition.<br></br
 The preliminary round topic is “Bridging the Gap: Reducing Global Inequalities for a Harmonious Future”. The final topic is revealed on the spot.<br></br>
 Judged on: Critical thinking, originality, relevance, communication, and confidence.<br></br>
 <a href="https://forms.gle/kHXxt2XZta7qudf89" target="_blank">Click here to register</a>`
-  },
-  {
-    name: "Navras",
-    description: `A celebration of performing arts combining music, dance, and expression. Represents the essence of cultural vibrancy through school performances under the Image 2025 banner.<br></br>
-Includes events like Symphony, Nrityanjali, and Sur Sangam showcasing emotional depth and stage energy.`
-  },
-  {
-    name: "Navrang",
-    description: `An artistic segment highlighting creativity and colour through visual arts.<br></br>
-Includes Chitrashala and Aesthetic Moves — encouraging young artists to paint, sculpt, and innovate with sustainable, meaningful artwork.`
-  },
-  {
-    name: "WordWeave",
-    description: `The literary showcase of Image 2025, blending expression through words, speeches, and podcasts.<br></br>
-Includes events like TED Talk, Hindi Podcast (बातों–बातों में), and Flights of Poetic Fantasy — nurturing eloquence, writing, and public speaking.`
-  },
-  {
-    name: "Aureus",
-    description: `The commerce and critical thinking category of Image 2025.<br></br>
-Includes events such as Bid Blitz and Think Tank, designed to foster strategic reasoning, decision-making, and economic awareness among students.`
-  },
-  {
-    name: "Technolympics",
-    description: `The ultimate STEM fest combining creativity, coding, and innovation under one banner.<br></br>
-Features events such as GameCraft, Webolution, CrypteX, ChemCraft 3D, and GameSpark — blending science, art, and technology for a sustainable digital future.`
   }
 ];
 
@@ -590,7 +565,10 @@ Judged on: Design, functionality, coding practices, and originality.<br></br>
 Google is the only ally in this high-speed puzzle chase.<br></br>
 Judged on: Logical reasoning, speed, and problem-solving.<br></br>
 <a href="https://forms.gle/YCmg6FCPSDfUMcAd8" target="_blank">Click here to register</a>`
-  },
+  }
+];
+
+const alsoevents = [
   {
     name: "ChemCraft 3D",
     description: `Science-meets-design event for classes X–XII. Teams create 3D molecular models in Blender and submit a report covering structure, geometry, and uses.<br></br>
@@ -599,17 +577,7 @@ Judged on: Scientific accuracy, creativity, and report quality.<br></br>
 <a href="https://forms.gle/WhTVh3jPKwKg9r587" target="_blank">Click here to register</a>`
   },
   {
-    name: "Vista View",
-    description: `A sustainability-driven art event for classes IX–XII. Teams design a 3D wall installation using waste materials under the theme “Waste to Art for Sustainable Creation”.<br></br>
-Encourages upcycling and artistic innovation.<br></br>
-Judged on: Creativity, originality, and thematic relevance.<br></br>
-<a href="https://forms.gle/uR55HQSbNumMRY526" target="_blank">Click here to register</a>`
-  }
-];
-
-const alsoevents = [
-  {
-    name: "Pulse WIthin",
+    name: "Elan: Pulse WIthin",
     description: `A high-energy western dance competition for classes VI–IX. Teams perform expressive and theme-based dances to pre-recorded music that reflects rhythm, creativity, and synchronization.<br></br>
 Costumes must be appropriate, and Bollywood tracks are not allowed. Props may be used, but no phones or changing rooms are provided.<br></br>
 Judged on: Choreography, expression, synchronization, creativity, and presentation.<br></br>
@@ -651,6 +619,13 @@ Judged on: Originality, gameplay mechanics, creativity, and user experience.<br>
 <a href="https://forms.gle/gxL3kqXmxEjCANtU7" target="_blank">Click here to register</a>`
   },
   {
+    name: "Vista View",
+    description: `A sustainability-driven art event for classes IX–XII. Teams design a 3D wall installation using waste materials under the theme “Waste to Art for Sustainable Creation”.<br></br>
+Encourages upcycling and artistic innovation.<br></br>
+Judged on: Creativity, originality, and thematic relevance.<br></br>
+<a href="https://forms.gle/uR55HQSbNumMRY526" target="_blank">Click here to register</a>`
+  },
+  {
     name: "Top Coders",
     description: `A programming contest for classes IX–XII testing problem-solving, logic, and coding efficiency in Python 3.13.<br></br>
 Teams solve multiple coding challenges within 1 hour using only the software provided by the school.<br></br>
@@ -677,31 +652,6 @@ Judged on: Auction strategy, budget balance, and final team composition.<br></br
 The preliminary round topic is “Bridging the Gap: Reducing Global Inequalities for a Harmonious Future”. The final topic is revealed on the spot.<br></br>
 Judged on: Critical thinking, originality, relevance, communication, and confidence.<br></br>
 <a href="https://forms.gle/kHXxt2XZta7qudf89" target="_blank">Click here to register</a>`
-  },
-  {
-    name: "Navras",
-    description: `A celebration of performing arts combining music, dance, and expression. Represents the essence of cultural vibrancy through school performances under the Image 2025 banner.<br></br>
-Includes events like Symphony, Nrityanjali, and Sur Sangam showcasing emotional depth and stage energy.`
-  },
-  {
-    name: "Navrang",
-    description: `An artistic segment highlighting creativity and colour through visual arts.<br></br>
-Includes Chitrashala and Aesthetic Moves — encouraging young artists to paint, sculpt, and innovate with sustainable, meaningful artwork.`
-  },
-  {
-    name: "WordWeave",
-    description: `The literary showcase of Image 2025, blending expression through words, speeches, and podcasts.<br></br>
-Includes events like TED Talk, Hindi Podcast (बातों–बातों में), and Flights of Poetic Fantasy — nurturing eloquence, writing, and public speaking.`
-  },
-  {
-    name: "Aureus",
-    description: `The commerce and critical thinking category of Image 2025.<br></br>
-Includes events such as Bid Blitz and Think Tank, designed to foster strategic reasoning, decision-making, and economic awareness among students.`
-  },
-  {
-    name: "Technolympics",
-    description: `The ultimate STEM fest combining creativity, coding, and innovation under one banner.<br></br>
-Features events such as GameCraft, Webolution, CrypteX, ChemCraft 3D, and GameSpark — blending science, art, and technology for a sustainable digital future.`
   }
 ];
 
