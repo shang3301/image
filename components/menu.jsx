@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useTransitionRouter } from "next-view-transitions";
@@ -14,7 +14,6 @@ const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const router = useTransitionRouter();
-  
 
   useLayoutEffect(() => {
     if (menuPreviewImgRef.current) {
@@ -70,7 +69,7 @@ const Menu = () => {
 
   const openMenu = () => {
     if (isAnimating || isOpen) return;
-    
+
     setIsAnimating(true);
 
     gsap.to(containerRef.current, {
@@ -182,15 +181,22 @@ const Menu = () => {
   };
 
   return (
-    <div className="menu">
-    <Cursor/>
+    <div className="menu" ref={containerRef}>
+      <Cursor />
       <nav className="transparent-nav">
         <div className="logo">
           <a href="#">Image</a>
         </div>
-        <div className="menu-toggle" onClick={() => (isOpen ? closeMenu() : openMenu())}>
-          <p id="menu-open" ref={menuOpenRef}>Menu</p>
-          <p id="menu-close" ref={menuCloseRef}>Close</p>
+        <div
+          className="menu-toggle"
+          onClick={() => (isOpen ? closeMenu() : openMenu())}
+        >
+          <p id="menu-open" ref={menuOpenRef}>
+            Menu
+          </p>
+          <p id="menu-close" ref={menuCloseRef}>
+            Close
+          </p>
         </div>
       </nav>
 
@@ -200,42 +206,48 @@ const Menu = () => {
             <div className="col-lg">
               <div className="menu-preview-img" ref={menuPreviewImgRef}></div>
             </div>
+
             <div className="col-sm">
               <div className="menu-links">
                 {[
                   { label: "Home", img: "images/10.jpg", href: "./" },
                   { label: "Events", img: "images/3.jpg", href: "./events" },
                   { label: "Gallery", img: "images/4.jpg", href: "./gallery" },
-                  { label: "Team", img: "images/5.jpg", href:"./team"},
-                ].map(({ label, img, href = "#" }) => (
+                  { label: "Team", img: "images/5.jpg", href: "./team" },
+                ].map(({ label, img, href }) => (
                   <div className="link" key={label}>
-                    <a 
-                    href={href} 
-                    data-img={img} 
-                    onMouseOver={() => handleHover(img)}
+                    <a
+                      href={href}
+                      data-img={img}
+                      onMouseOver={() => handleHover(img)}
                     >
                       {label}
                     </a>
                   </div>
                 ))}
               </div>
+
               <div className="menu-socials">
                 {[
                   { name: "Behance", link: "https://behance.net/" },
                   { name: "Dribbble", link: "https://dribbble.com/" },
                   { name: "LinkedIn", link: "https://linkedin.com/in/" },
-                  { name: "Instagram", link: "https://www.instagram.com/cambridgenoida/" },
-                  { name: "Linktree", link: "https://linktr.ee/Image_2025" }
+                  {
+                    name: "Instagram",
+                    link: "https://www.instagram.com/cambridgenoida/",
+                  },
+                  { name: "Linktree", link: "https://linktr.ee/Image_2025" },
                 ].map(({ name, link }) => (
-                <div className="social" key={name}>
-                  <a href={link} target="_blank" rel="noopener noreferrer">
-                  {name}
-                  </a>
-                </div>
+                  <div className="social" key={name}>
+                    <a href={link} target="_blank" rel="noopener noreferrer">
+                      {name}
+                    </a>
+                  </div>
                 ))}
               </div>
-
+            </div>
           </div>
+
           <div className="menu-footer">
             <div className="col-lg">
               <a href="#"></a>
@@ -248,7 +260,6 @@ const Menu = () => {
         </div>
       </div>
     </div>
-  </div>
   );
 };
 
