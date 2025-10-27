@@ -88,7 +88,7 @@ export default function Home() {
             <p className="events-a"><a href="events/">Check The Events Here!</a></p>
         </div>
           <div className="register">
-            <p><a href="">Register Here !</a></p>
+            <p><a href="https://forms.gle/8FJTZ359txi17roy6">Register Here !</a></p>
           </div>
       </div>
 
