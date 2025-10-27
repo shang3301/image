@@ -966,6 +966,7 @@ a, p {
   }
 
   .item-name {
+    display: none;
     font-size: 0.75rem;
     height: 35px;
   }

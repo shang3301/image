@@ -195,7 +195,7 @@ const Menu = () => {
                   { label: "Home", img: "images/10.jpg", href: "./" },
                   { label: "Events", img: "images/3.jpg", href: "./events" },
                   { label: "Gallery", img: "images/4.jpg", href: "./gallery" },
-                  { label: "Team", img: "images/5.jpg", href: "./team" },
+                  {/*{ label: "Team", img: "images/5.jpg", href: "./team" },*/}
                 ].map(({ label, img, href = "#" }) => (
                   <div className="link" key={label}>
                     <a
