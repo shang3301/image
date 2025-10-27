@@ -423,12 +423,6 @@ nav p#logo {
   font-size: 20px;
 }
 
-.register {
-  text-align: center;
-  position: relative;
-  margin-bottom: 5rem;
-}
-
 /* Card */
 .landing-card {
   position: absolute;
@@ -437,26 +431,83 @@ nav p#logo {
   transform: translate(-50%, -50%);
   width: 70%;
   height: 70%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex;              /* ✅ Make it a flex container */
+  flex-direction: column;     /* ✅ Stack h1 and p vertically */
+  justify-content: center;    /* ✅ Center vertically */
+  align-items: center;        /* ✅ Center horizontally */
   background-color: #fff;
-  clip-path: polygon(0% 50%, 100% 50%, 100% 50%, 0% 50%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .landing-card h1 {
   text-align: center;
   width: 100%;
   font-size: 3rem;
+  margin: 0;                  /* ✅ Remove default margin */
 }
 
+.landing-card p {
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0;                  /* ✅ Remove default margin */
+}
+
+ul{
+  list-style-type: none;
+}
+
+.event-lists {
+  display: flex;               /* put both ULs side by side */
+  justify-content: center;     /* center horizontally */
+  gap: 3rem;                   /* spacing between the two columns */
+  margin-top: 1rem;
+  flex-wrap: wrap;             /* stack on smaller screens */
+}
+
+.event-list {
+  list-style: none;            /* remove bullets */
+  padding: 0;
+  margin: 0;
+  text-align: left;            /* align text neatly */
+}
+
+.event-list li {
+  font-size: 1rem;
+  margin: 4px 0;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.events-a{
+  display: none;
+  line-height: 2;
+}
+
+@media (max-height: 700px){
+  .event-lists{
+    display: none;
+  }
+  .events-a{
+    display: block;
+  }
+}
+
+.register {
+  position: absolute;
+  bottom: 5%;       /* push it to bottom area */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+/*
 .landing-card .char span {
   position: relative;
   display: inline-block;
   transform: translateY(100%);
   will-change: transform;
 }
-
+*/
 /* Text animation characters */
 .landing-intro-title .char,
 .landing-outro-title .char,
