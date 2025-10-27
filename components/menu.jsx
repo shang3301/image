@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { useTransitionRouter } from "next-view-transitions";
@@ -24,7 +24,6 @@ const Menu = () => {
   const animateMenuToggle = (isOpening) => {
     const open = menuOpenRef.current;
     const close = menuCloseRef.current;
-
     gsap.to(isOpening ? open : close, {
       x: isOpening ? -5 : 5,
       y: isOpening ? -10 : 10,
@@ -34,7 +33,6 @@ const Menu = () => {
       duration: 0.5,
       ease: "power2.out",
     });
-
     gsap.to(isOpening ? close : open, {
       x: 0,
       y: 0,
@@ -71,7 +69,6 @@ const Menu = () => {
     if (isAnimating || isOpen) return;
 
     setIsAnimating(true);
-
     gsap.to(containerRef.current, {
       rotation: 10,
       x: 300,
@@ -80,9 +77,7 @@ const Menu = () => {
       duration: 1.25,
       ease: "power4.inOut",
     });
-
     animateMenuToggle(true);
-
     gsap.to(menuContentRef.current, {
       rotation: 0,
       x: 0,
@@ -92,7 +87,6 @@ const Menu = () => {
       duration: 1.25,
       ease: "power4.inOut",
     });
-
     gsap.to([".link a", ".social a"], {
       y: "0%",
       opacity: 1,
@@ -101,7 +95,6 @@ const Menu = () => {
       stagger: 0.1,
       ease: "power3.out",
     });
-
     gsap.to(menuOverlayRef.current, {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 175%, 0% 100%)",
       duration: 1.25,
@@ -116,7 +109,6 @@ const Menu = () => {
   const closeMenu = () => {
     if (isAnimating || !isOpen) return;
     setIsAnimating(true);
-
     gsap.to(containerRef.current, {
       rotation: 0,
       x: 0,
@@ -125,9 +117,7 @@ const Menu = () => {
       duration: 1.25,
       ease: "power4.inOut",
     });
-
     animateMenuToggle(false);
-
     gsap.to(menuContentRef.current, {
       rotation: -15,
       x: -100,
@@ -137,7 +127,6 @@ const Menu = () => {
       duration: 1.25,
       ease: "power4.inOut",
     });
-
     gsap.to(menuOverlayRef.current, {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
       duration: 1.25,
@@ -153,24 +142,18 @@ const Menu = () => {
 
   const handleHover = (imgSrc) => {
     if (!isOpen || isAnimating || !imgSrc) return;
-
     const container = menuPreviewImgRef.current;
     if (!container) return;
-
     const images = container.querySelectorAll("img");
     const lastImg = images[images.length - 1];
-
     if (lastImg && lastImg.src.endsWith(imgSrc)) return;
-
     const img = document.createElement("img");
     img.src = imgSrc;
     img.alt = "";
     img.style.opacity = "0";
     img.style.transform = "scale(1.25) rotate(10deg)";
     container.appendChild(img);
-
     cleanupPreviewImages();
-
     gsap.to(img, {
       opacity: 1,
       scale: 1,
@@ -181,7 +164,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="menu" ref={containerRef}>
+    <div className="menu">
       <Cursor />
       <nav className="transparent-nav">
         <div className="logo">
@@ -206,7 +189,6 @@ const Menu = () => {
             <div className="col-lg">
               <div className="menu-preview-img" ref={menuPreviewImgRef}></div>
             </div>
-
             <div className="col-sm">
               <div className="menu-links">
                 {[
@@ -214,7 +196,7 @@ const Menu = () => {
                   { label: "Events", img: "images/3.jpg", href: "./events" },
                   { label: "Gallery", img: "images/4.jpg", href: "./gallery" },
                   { label: "Team", img: "images/5.jpg", href: "./team" },
-                ].map(({ label, img, href }) => (
+                ].map(({ label, img, href = "#" }) => (
                   <div className="link" key={label}>
                     <a
                       href={href}
@@ -236,7 +218,10 @@ const Menu = () => {
                     name: "Instagram",
                     link: "https://www.instagram.com/cambridgenoida/",
                   },
-                  { name: "Linktree", link: "https://linktr.ee/Image_2025" },
+                  {
+                    name: "Linktree",
+                    link: "https://linktr.ee/Image_2025",
+                  },
                 ].map(({ name, link }) => (
                   <div className="social" key={name}>
                     <a href={link} target="_blank" rel="noopener noreferrer">
@@ -247,7 +232,6 @@ const Menu = () => {
               </div>
             </div>
           </div>
-
           <div className="menu-footer">
             <div className="col-lg">
               <a href="#"></a>
@@ -259,7 +243,7 @@ const Menu = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   );
 };
 
