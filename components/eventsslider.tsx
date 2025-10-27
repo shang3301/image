@@ -223,7 +223,7 @@ export default function EventSlider() {
             <h1>{events[0].name}</h1>
           </div>
           <div className="slide-description">
-            <p>{events[0].description}</p>
+            <p dangerouslySetInnerHTML={{ __html: events[0].description }} />
           </div>
         </div>
 
