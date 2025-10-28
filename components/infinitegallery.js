@@ -39,7 +39,7 @@ const InfiniteGallery = () => {
     const overlay = document.querySelector(".gallery-overlay");
     const projectTitleElement = document.querySelector(".gallery-project-title p");
 
-    const itemCount = 20;
+    const itemCount = 16;
     const itemGap = 150;
     const columns = 4;
     const itemWidth = 120;
@@ -121,7 +121,7 @@ const InfiniteGallery = () => {
 
           const itemNum = (Math.abs(row * columns + col) % itemCount) + 1;
           const img = document.createElement("img");
-          img.src = `images/${itemNum}.jpg`;
+          img.src = `images/gallery/${itemNum}.JPG`;
           img.alt = `Image ${itemNum}`;
           img.style.width = "100%";
           img.style.height = "100%";
