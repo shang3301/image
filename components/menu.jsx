@@ -211,16 +211,16 @@ const Menu = () => {
 
               <div className="menu-socials">
                 {[
-                  { name: "Behance", link: "https://behance.net/" },
-                  { name: "Dribbble", link: "https://dribbble.com/" },
-                  { name: "LinkedIn", link: "https://linkedin.com/in/" },
+                  { name: "Linktree", link: "https://linktr.ee/Image_2025" },
+                  { name: "Brochure", link: "https://bit.ly/Image2025" },
+                  { name: "Youtube", link: "https://www.youtube.com/@CAMBRIDGESCHOOLNoida" },
                   {
                     name: "Instagram",
-                    link: "https://www.instagram.com/cambridgenoida/",
+                    link: "https://instagram.com/cambridgenoida",
                   },
                   {
-                    name: "Linktree",
-                    link: "https://linktr.ee/Image_2025",
+                    name: "Facebook",
+                    link: "https://www.facebook.com/Imagine.Explore.Discover.Grow.Soar",
                   },
                 ].map(({ name, link }) => (
                   <div className="social" key={name}>
