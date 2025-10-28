@@ -121,7 +121,7 @@ const InfiniteGallery = () => {
 
           const itemNum = (Math.abs(row * columns + col) % itemCount) + 1;
           const img = document.createElement("img");
-          img.src = `images/gallery/${itemNum}.JPG`;
+          img.src = `images/gallery/${itemNum}.jpg`;
           img.alt = `Image ${itemNum}`;
           img.style.width = "100%";
           img.style.height = "100%";
