@@ -1,7 +1,16 @@
+"use client";
+import React, { useEffect, useState } from "react";
 import LandingAnimation from "@/components/landinganimation";
 
-
 export default function Home() {
+  const [showTrailer, setShowTrailer] = useState(false);
+
+  useEffect(() => {
+    // ⏳ Wait 4 seconds, then show iframe
+    const timer = setTimeout(() => setShowTrailer(true), 3300);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="landing">
       <LandingAnimation />
@@ -35,63 +44,36 @@ export default function Home() {
           <p>A Festival of Interschool Competitions</p>
         </div>
         <div className="landing-tag landing-tag-3">
-          <p>Novermber 19 & 20, 2025</p>
+          <p>November 19 & 20, 2025</p>
         </div>
       </div>
 
       {/* Main Container */}
       <div className="landing-container">
-        <nav>
-        </nav>
-
         <div className="landing-hero-img">
           <img src="images/2.jpg" alt="background" />
         </div>
 
+        {/* Trailer loads after 4 seconds */}
         <div className="landing-card">
-          <h1>Image 2025</h1>
-          <br />
-          <br />
-          <br />
-          <p>Back with 25 Events</p>
-          <div className="event-lists">
-            <ul className="event-list">
-              <li>Symphony</li>
-              <li>Nrityanjali</li>
-              <li>Sur Sangam</li>
-              <li>Kitchen Geniuses</li>
-              <li>TED Talk</li>
-              <li>बातों–बातों में</li>
-              <li>Poetic Fantasy</li>
-              <li>Sanskrit Shloka</li>
-              <li>Chitrashala</li>
-              <li>Aesthetic Moves</li>
-              <li>GameCraft</li>
-              <li>Webolution</li>
-              <li>CrypteX</li>
-            </ul>
-            <ul className="event-list">
-              <li>ChemCraft 3D</li>
-              <li>Vista View</li>
-              <li>Pulse Within</li>
-              <li>Nukkad Natak</li>
-              <li>Rube It Up!</li>
-              <li>EcoInnovators</li>
-              <li>Reel Harmony</li>
-              <li>GameSpark</li>
-              <li>Top Coders</li>
-              <li>IQrypt</li>
-              <li>Bid Blitz</li>
-              <li>Think Tank</li>
-            </ul>
-          </div>
-            <p className="events-a"><a href="events/">Check The Events Here!</a></p>
+          {showTrailer && (
+            <iframe
+              src="https://player.vimeo.com/video/1132866617?autoplay=1&muted=1&background=1"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="Image Trailer"
+              style={{ width: "100%", height: "100%" }}
+            ></iframe>
+          )}
         </div>
-          <div className="register">
-            <p><a href="https://forms.gle/8FJTZ359txi17roy6">Register Here !</a></p>
-          </div>
-      </div>
 
+        <div className="register">
+          <p>
+            <a href="https://linktr.ee/Image_2025">Register Here !</a>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
