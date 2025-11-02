@@ -504,6 +504,7 @@ ul{
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
+  mix-blend-mode: difference;
 }
 /*
 .landing-card .char span {
