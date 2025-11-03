@@ -60,7 +60,7 @@ const Menu = () => {
     if (!container) return;
     container.innerHTML = "";
     const img = document.createElement("img");
-    img.src = "images/6.jpg";
+    img.src = "images/vasu.png";
     img.alt = "";
     container.appendChild(img);
   };

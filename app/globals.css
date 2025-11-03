@@ -150,6 +150,7 @@ nav p#logo {
 
 .logo a {
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .menu-toggle {
@@ -163,6 +164,7 @@ nav p#logo {
   position: absolute;
   transform-origin: top left;
   will-change: transform, opacity;
+  font-size: 1rem;
 }
 
 .menu-overlay {
@@ -498,13 +500,15 @@ ul{
   }
 }
 
-.register {
+.register a{
   position: absolute;
   bottom: 5%;       /* push it to bottom area */
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   mix-blend-mode: difference;
+  font-weight: 800;
+  font-size: larger;
 }
 /*
 .landing-card .char span {
@@ -1152,7 +1156,7 @@ a, p {
   position: relative;  /* no absolute here */
   display: block;           /* ensures each <p> stacks properly */
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;     /* proper spacing */
   white-space: normal;      /* allow wrapping */
   margin: 0.5rem 0;         /* space between multiple paragraphs */
