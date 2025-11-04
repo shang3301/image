@@ -1177,10 +1177,11 @@ a, p {
   flex-direction: column;
   gap: 1rem;
   z-index: 3;
+  color: #972925;
 }
 
 .slider-timeline button {
-  color: #cecece;
+  color: #972925;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1211,6 +1212,7 @@ a, p {
   flex-direction: column;
   gap: 1rem;
   z-index: 3;
+  color: #972925;
 }
 
 .slider-timeline-2 button {
@@ -1277,7 +1279,7 @@ a, p {
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  color: #fff;
+  color: #972925;
   font-size: 12px;
 }
 
