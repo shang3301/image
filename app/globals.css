@@ -151,6 +151,7 @@ nav p#logo {
 .logo a {
   font-weight: 600;
   font-size: 1rem;
+  color: #1c4fa1;
 }
 
 .menu-toggle {
@@ -166,6 +167,7 @@ nav p#logo {
   transform-origin: top left;
   will-change: transform, opacity;
   font-size: 1rem;
+  color: #1c4fa1;
 }
 
 .menu-overlay {
