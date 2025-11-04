@@ -151,6 +151,7 @@ nav p#logo {
 .logo a {
   font-weight: 600;
   font-size: 1rem;
+  color: white;
 }
 
 .menu-toggle {
@@ -158,6 +159,7 @@ nav p#logo {
   width: 3rem;
   height: 1.5rem;
   cursor: pointer;
+  color:white;
 }
 
 .menu-toggle p {
@@ -357,7 +359,7 @@ nav p#logo {
 .landing-preloader,
 .landing-inbetween,
 .landing-split-overlay {
-  background-color: #0a0a0a;
+  background-color: #ecc39d;
   color: #fff;
 }
 
