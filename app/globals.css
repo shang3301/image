@@ -140,7 +140,7 @@ nav p#logo {
 }
 
 .menu .logo, a, p {
-    color: white;
+    color: #972925;
     mix-blend-mode: difference;
 }
 
@@ -171,7 +171,7 @@ nav p#logo {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: #0f0f0f;
+  background-color: #ecc39d;
   z-index: 1;
 }
 
