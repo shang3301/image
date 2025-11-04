@@ -729,10 +729,10 @@ a, p {
 /* events Items */
 .gallery-item {
   position: absolute;
-  width: 120px;
-  height: 160px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
-  background-color: #000;
+  background-color: #f4e6ce;
   cursor: pointer;
 }
 
@@ -750,7 +750,7 @@ a, p {
   width: 100vw;
   height: 100vh;
   z-index: 9999;
-  background-color: #090909;
+  background-color: #f4e6ce;
   display: flex;
   flex-direction: column;
   justify-content: center; /* vertically center */
@@ -763,8 +763,8 @@ a, p {
 }
 
 .expanded-item img {
-  max-height: 60vh;
-  min-width: 80vw;
+  max-height: 80vh;
+  min-width: 60vw;
   object-fit: contain;
   display: block;
 }
