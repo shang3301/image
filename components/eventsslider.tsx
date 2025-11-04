@@ -457,17 +457,10 @@ Judged on: Knowledge depth, teamwork, and quick thinking.<br></br>
 Critical thinking, finance sense, and teamwork play key roles in success.<br></br>
 Judged on: Auction strategy, budget balance, and final team composition.<br></br>
 <a href="https://forms.gle/81U3stCbeXUuzJpz6" target="_blank">Click here to register</a>`
-  }
+  },
 ];
 
 const events = [
-  {
-    name: "Think Tank",
-    description: `A thought-provoking group discussion event for classes IX–XII based on the Image 2025 theme “वसुधैव कुटुम्बकम्”.<br></br>
-The preliminary round topic is “Bridging the Gap: Reducing Global Inequalities for a Harmonious Future”. The final topic is revealed on the spot.<br></br>
-Judged on: Critical thinking, originality, relevance, communication, and confidence.<br></br>
-<a href="https://forms.gle/kHXxt2XZta7qudf89" target="_blank">Click here to register</a>`
-  },
   {
     name: "Symphony",
     description: `A western music competition for classes IX–XII, where teams perform a self-composed or improvised English song using only live instruments — no backing tracks or autotune.<br></br>
@@ -558,17 +551,17 @@ Judged on: Creativity, gameplay, design, and educational value.<br></br>
 Projects must include at least four pages and interactive elements such as forms or animations.<br></br>
 Judged on: Design, functionality, coding practices, and originality.<br></br>
 <a href="https://forms.gle/oz2yGNRKFSkqxqcYA" target="_blank">Click here to register</a>`
-  },
-  {
-    name: "CrypteX",
-    description: `A thrilling 24-hour online cryptic hunt on Discord for classes IX–XII. Participants decode clues hidden in images, riddles, and web trails to advance levels.<br></br>
-Google is the only ally in this high-speed puzzle chase.<br></br>
-Judged on: Logical reasoning, speed, and problem-solving.<br></br>
-<a href="https://forms.gle/YCmg6FCPSDfUMcAd8" target="_blank">Click here to register</a>`
   }
 ];
 
 const alsoevents = [
+  {
+    name: "CryteX",
+    description: `A thrilling 24-hour online cryptic hunt on Discord for classes IX–XII. Participants decode clues hidden in images, riddles, and web trails to advance levels.<br></br>
+Google is the only ally in this high-speed puzzle chase.<br></br>
+Judged on: Logical reasoning, speed, and problem-solving.<br></br>
+<a href="https://forms.gle/YCmg6FCPSDfUMcAd8" target="_blank">Click here to register</a>`
+  },
   {
     name: "ChemCraft 3D",
     description: `Science-meets-design event for classes X–XII. Teams create 3D molecular models in Blender and submit a report covering structure, geometry, and uses.<br></br>
