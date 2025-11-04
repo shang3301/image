@@ -192,9 +192,9 @@ const Menu = () => {
             <div className="col-sm">
               <div className="menu-links">
                 {[
-                  { label: "Home", img: "images/6.jpg", href: "./" },
-                  { label: "Events", img: "images/9.jpg", href: "./events" },
-                  { label: "Gallery", img: "images/12.jpg", href: "./gallery" },
+                  { label: "Home", img: "images/gallery/6.jpg", href: "./" },
+                  { label: "Events", img: "images/gallery/9.jpg", href: "./events" },
+                  { label: "Gallery", img: "images/galery/12.jpg", href: "./gallery" },
                   {/*{ label: "Team", img: "images/15.jpg", href: "./team" },*/}
                 ].map(({ label, img, href = "#" }) => (
                   <div className="link" key={label}>
