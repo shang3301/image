@@ -729,8 +729,8 @@ a, p {
 /* events Items */
 .gallery-item {
   position: absolute;
-  width: 180px;
-  height: 180px;
+  width: 120px;
+  height: 160px;
   overflow: hidden;
   background-color: #000;
   cursor: pointer;
@@ -764,7 +764,7 @@ a, p {
 
 .expanded-item img {
   max-height: 60vh;
-  min-width: 60vw;
+  min-width: 80vw;
   object-fit: contain;
   display: block;
 }
