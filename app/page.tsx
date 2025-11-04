@@ -51,7 +51,6 @@ export default function Home() {
       {/* Main Container */}
       <div className="landing-container">
         <div className="landing-hero-img">
-          <img src="images/2.jpg" alt="background" />
         </div>
 
         {/* Trailer loads after 4 seconds */}
