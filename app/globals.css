@@ -1110,6 +1110,7 @@ a, p {
   z-index: 2;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 1rem;
+  color: white !important;
 }
 
 .slide-copy h1 {
@@ -1127,7 +1128,6 @@ a, p {
 .slide-copy p {
   font-size: 1.1rem;
   line-height: 1.5;
-  color: white !important;
 }
 
 .slide-title {
@@ -1181,7 +1181,7 @@ a, p {
   flex-direction: column;
   gap: 0.7rem;
   z-index: 3;
-  color: #972925;
+  color: white !important;
 }
 
 .slider-timeline button {
@@ -1216,7 +1216,7 @@ a, p {
   flex-direction: column;
   gap: 0.7rem;
   z-index: 3;
-  color: #972925;
+  color: white !important;
 }
 
 .slider-timeline-2 button {
