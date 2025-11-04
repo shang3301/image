@@ -254,7 +254,7 @@ nav p#logo {
 }
 
 .link a{
-    font-size: 3.5rem;
+    font-size: 3rem;
   letter-spacing: -0.02rem;
 }
 
@@ -326,7 +326,7 @@ nav p#logo {
     letter-spacing: 0;
   }
   .menu-links a {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   .menu-items img {
     max-height: 70vh;

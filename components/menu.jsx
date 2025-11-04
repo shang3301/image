@@ -237,8 +237,8 @@ const Menu = () => {
               <a href="#"></a>
             </div>
             <div className="col-sm">
-              <a href="#">Vasudhaiva</a>
-              <a href="#">Kutumbakam</a>
+              <a href="#">वसुधैव</a>
+              <a href="#">कुटुम्बकम</a>
             </div>
           </div>
         </div>

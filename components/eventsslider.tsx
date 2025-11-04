@@ -364,10 +364,10 @@ Judged on: Pronunciation, confidence, melody, and presentation style.<br></br>
   {
     name: "Chitrashala",
     description: `Junior Art Competitions for classes III–V featuring three sub-events:<br></br>
-- “Reimagine & Recreate” (Recycling Art)<br></br>
-- “Paper Montage” (Collage Creation)<br></br>
-- “Canvas Painting” (We Are All Connected)<br></br>
-Students express creativity using sustainable materials while promoting eco-consciousness.<br></br>
+- “Reimagine & Recreate” (Recycling Art)<br>
+- “Paper Montage” (Collage Creation)<br>
+- “Canvas Painting” (We Are All Connected)<br>
+Students express creativity using sustainable materials while promoting eco-consciousness.<br>
 Judged on: Originality, creativity, neatness, and theme relevance.<br></br>
 <a href="https://forms.gle/a6VVFdMtfJ3J9baU9" target="_blank">Click here to register</a>`
   },
@@ -542,9 +542,9 @@ Judged on: Pronunciation, confidence, melody, and presentation style.<br></br>
   {
     name: "Chitrashala",
     description: `Junior Art Competitions for classes III–V featuring three sub-events:<br></br>
-- “Reimagine & Recreate” (Recycling Art)<br></br>
-- “Paper Montage” (Collage Creation)<br></br>
-- “Canvas Painting” (We Are All Connected)<br></br>
+- “Reimagine & Recreate” (Recycling Art)<br>
+- “Paper Montage” (Collage Creation)<br>
+- “Canvas Painting” (We Are All Connected)<br>
 Students express creativity using sustainable materials while promoting eco-consciousness.<br></br>
 Judged on: Originality, creativity, neatness, and theme relevance.<br></br>
 <a href="https://forms.gle/a6VVFdMtfJ3J9baU9" target="_blank">Click here to register</a>`

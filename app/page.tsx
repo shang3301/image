@@ -38,7 +38,7 @@ export default function Home() {
       {/* Tags */}
       <div className="landing-tags-overlay">
         <div className="landing-tag landing-tag-1">
-          <p>Vasudhaiva Kutumbakam</p>
+          <p>वसुधैव कुटुम्बकम</p>
         </div>
         <div className="landing-tag landing-tag-2">
           <p>A Festival of Interschool Competitions</p>
