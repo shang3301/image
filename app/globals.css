@@ -729,8 +729,8 @@ a, p {
 /* events Items */
 .gallery-item {
   position: absolute;
-  width: 120px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   overflow: hidden;
   background-color: #000;
   cursor: pointer;
@@ -756,14 +756,14 @@ a, p {
   justify-content: center; /* vertically center */
   align-items: center;     /* horizontally center */
   padding: 20px;
-  gap: 1.5rem;
+  gap: 1rem;
   box-sizing: border-box;
   overflow: auto;
   color: white;
 }
 
 .expanded-item img {
-  max-height: 60vh;
+  max-height: 80vh;
   min-width: 80vw;
   object-fit: contain;
   display: block;
