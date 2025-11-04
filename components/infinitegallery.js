@@ -39,8 +39,8 @@ const InfiniteGallery = () => {
     const overlay = document.querySelector(".gallery-overlay");
     const projectTitleElement = document.querySelector(".gallery-project-title p");
 
-    const itemCount = 16;
-    const itemGap = 150;
+    const itemCount = 18;
+    const itemGap = 100;
     const columns = 4;
     const itemWidth = 120;
     const itemHeight = 160;
