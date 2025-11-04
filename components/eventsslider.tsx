@@ -195,6 +195,28 @@ export default function EventSlider() {
     };
   }, []);
 
+  useEffect(() => {
+  // Run only once — ensure first slide is visible
+  const firstSlideImg = document.querySelector(".slide-main-img-wrapper img") as HTMLImageElement;
+  if (firstSlideImg) {
+    gsap.set(firstSlideImg, { y: "0%", scale: 1 });
+  }
+
+  const firstSlideBg = document.querySelector(".slide-bg-img") as HTMLElement;
+  if (firstSlideBg) {
+    gsap.set(firstSlideBg, {
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+    });
+  }
+
+  const firstWrapper = document.querySelector(".slide-main-img-wrapper") as HTMLElement;
+  if (firstWrapper) {
+    gsap.set(firstWrapper, {
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+    });
+  }
+}, []);
+
   return (
     <>
       <div className="events-footer">
