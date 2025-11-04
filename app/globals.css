@@ -1196,13 +1196,13 @@ a, p {
 .slider-timeline button:hover {
   color: #972925;
   border-left: 2px solid #fff;
-  background-color: #ffffff17;
+  background-color: #ddb2ae;
 }
 
 .slider-timeline button:active {
   color: #ffffff17;
   border-left: 2px solid #fff;
-  background-color: #ffffff09;
+  background-color: #ddb2ae;
 }
 /* Desktop timeline (keep existing styles) */
 .slider-timeline-2 {
@@ -1231,13 +1231,13 @@ a, p {
 .slider-timeline-2 button:hover {
   color: #972925;
   border-left: 2px solid #fff;
-  background-color: #ffffff17;
+  background-color: #ddb2ae;
 }
 
 .slider-timeline-2 button:active {
   color: #ffffff17;
   border-left: 2px solid #fff;
-  background-color: #ffffff09;
+  background-color: #ddb2ae;
 }
 
 /* Mobile dropdown container */
