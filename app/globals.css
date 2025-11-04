@@ -1065,8 +1065,7 @@ a, p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  filter: opacity(25%);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .slide-main-img {
@@ -1077,8 +1076,7 @@ a, p {
   width: 25%;
   height: 50%;
   z-index: 2;
-  filter: brightness(50%);
-  filter: opacity(25%);
+  filter: brightness(80%);
 }
 
 .slide-main-img-wrapper {
