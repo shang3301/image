@@ -1110,7 +1110,6 @@ a, p {
   z-index: 2;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 1rem;
-  color: white !important;
 }
 
 .slide-copy h1 {
@@ -1144,7 +1143,7 @@ a, p {
 
 .slide-title h1 {
   position: absolute;
-  color: #972925;
+  color: #fff;
   font-size: 48px;
   font-weight: 400;
   transform: translateY(0px);
@@ -1160,7 +1159,7 @@ a, p {
 .slide-description p {
   position: relative;  /* no absolute here */
   display: block;           /* ensures each <p> stacks properly */
-  color: #972925;
+  color: #fff;
   font-size: 20px;
   font-weight: 400;     /* proper spacing */
   white-space: normal;      /* allow wrapping */
@@ -1181,11 +1180,11 @@ a, p {
   flex-direction: column;
   gap: 0.7rem;
   z-index: 3;
-  color: white !important;
+  color: white;
 }
 
 .slider-timeline button {
-  color: #972925;
+  color: #fff;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1196,7 +1195,7 @@ a, p {
 }
 
 .slider-timeline button:hover {
-  color: #972925;
+  color: #fff;
   border-left: 2px solid #fff;
   background-color: #ddb2ae;
 }
@@ -1220,7 +1219,7 @@ a, p {
 }
 
 .slider-timeline-2 button {
-  color: #972925;
+  color: #fff;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1231,7 +1230,7 @@ a, p {
 }
 
 .slider-timeline-2 button:hover {
-  color: #972925;
+  color: #fff;
   border-left: 2px solid #fff;
   background-color: #ddb2ae;
 }
@@ -1261,7 +1260,7 @@ a, p {
   font-size: 12;
   width: 100px;
   background-color: #000000d0;
-  color: #972925;
+  color: #fff;
   border: 1px solid #555;
   border-radius: 4px;
   outline: none;
@@ -1283,7 +1282,7 @@ a, p {
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  color: #972925;
+  color: #fff;
   font-size: 12px;
 }
 
