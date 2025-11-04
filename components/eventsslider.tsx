@@ -457,17 +457,17 @@ Judged on: Knowledge depth, teamwork, and quick thinking.<br></br>
 Critical thinking, finance sense, and teamwork play key roles in success.<br></br>
 Judged on: Auction strategy, budget balance, and final team composition.<br></br>
 <a href="https://forms.gle/81U3stCbeXUuzJpz6" target="_blank">Click here to register</a>`
-  },
+  }
+];
+
+const events = [
   {
     name: "Think Tank",
     description: `A thought-provoking group discussion event for classes IX–XII based on the Image 2025 theme “वसुधैव कुटुम्बकम्”.<br></br>
 The preliminary round topic is “Bridging the Gap: Reducing Global Inequalities for a Harmonious Future”. The final topic is revealed on the spot.<br></br>
 Judged on: Critical thinking, originality, relevance, communication, and confidence.<br></br>
 <a href="https://forms.gle/kHXxt2XZta7qudf89" target="_blank">Click here to register</a>`
-  }
-];
-
-const events = [
+  },
   {
     name: "Symphony",
     description: `A western music competition for classes IX–XII, where teams perform a self-composed or improvised English song using only live instruments — no backing tracks or autotune.<br></br>
