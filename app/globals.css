@@ -441,7 +441,7 @@ nav p#logo {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-iframe {
+.landing-card img {
   width: 100%;
   height: 100%;
 }
