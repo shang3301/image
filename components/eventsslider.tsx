@@ -13,7 +13,7 @@ export default function EventSlider() {
 
   /** Helper: get image URL */
   function getImgUrl(num: number) {
-    return `/images/${num}.jpg`;
+    return `/images/${num}.png`;
   }
 
   /** Helper: create slide element */
