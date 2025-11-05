@@ -331,11 +331,14 @@ nav p#logo {
     letter-spacing: 0;
   }
   .menu-links a {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .menu-items img {
     max-height: 70vh;
     justify-content: center; /* 🔥 this centers vertically */
+  }
+  .menu-preview-img{
+    width: 70%;
   }
 }
 
@@ -776,6 +779,7 @@ a, p {
 
 /* Caption under expanded item */
 .expanded-caption {
+    display: none;
   position: relative;
   color: white;
   max-width: 80%;
@@ -794,25 +798,30 @@ a, p {
 
 .expanded-caption h2 {
   font-size: 1.8rem;
+    display: none;
   margin: 0;
   line-height: 1.2;
 }
 
 .expanded-caption p {
+    display: none;
   font-size: 1rem;
   opacity: 0.85;
   margin-top: 1rem;
 }
 @media (max-width: 900px) {
   .expanded-caption h2 {
+    display: none;
     font-size: 1rem;
   }
   .expanded-caption p{
+    display: none;
     font-size: 0.5rem;
   }
 }
 @media (max-width: 700px) {
   .expanded-caption {
+    display: none;
     bottom: 5%;
   }
 }
