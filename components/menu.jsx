@@ -140,28 +140,37 @@ const Menu = () => {
     });
   };
 
-  const handleHover = (imgSrc) => {
-    if (!isOpen || isAnimating || !imgSrc) return;
-    const container = menuPreviewImgRef.current;
-    if (!container) return;
-    const images = container.querySelectorAll("img");
-    const lastImg = images[images.length - 1];
-    if (lastImg && lastImg.src.endsWith(imgSrc)) return;
-    const img = document.createElement("img");
-    img.src = imgSrc;
-    img.alt = "";
-    img.style.opacity = "0";
-    img.style.transform = "scale(1.25) rotate(10deg)";
-    container.appendChild(img);
-    cleanupPreviewImages();
-    gsap.to(img, {
-      opacity: 1,
-      scale: 1,
-      rotation: 0,
-      duration: 0.75,
-      ease: "power2.out",
-    });
-  };
+const handleHover = (imgSrc) => {
+  if (!isOpen || isAnimating || !imgSrc) return;
+  const container = menuPreviewImgRef.current;
+  if (!container) return;
+
+  // 🧹 Remove brochure image if it exists
+  const brochureImg = container.querySelector('img[src*="brochure.png"]');
+  if (brochureImg) brochureImg.remove();
+
+  const images = container.querySelectorAll("img");
+  const lastImg = images[images.length - 1];
+  if (lastImg && lastImg.src.endsWith(imgSrc)) return;
+
+  const img = document.createElement("img");
+  img.src = imgSrc;
+  img.alt = "";
+  img.style.opacity = "0";
+  img.style.transform = "scale(1.25) rotate(10deg)";
+  img.style.objectFit = "cover"; // 👈 ensure hover images fill nicely
+  container.appendChild(img);
+
+  cleanupPreviewImages();
+
+  gsap.to(img, {
+    opacity: 1,
+    scale: 1,
+    rotation: 0,
+    duration: 0.75,
+    ease: "power2.out",
+  });
+};
 
   return (
     <div className="menu">

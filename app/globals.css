@@ -231,6 +231,11 @@ nav p#logo {
 .menu-preview-img img {
   position: absolute;
   will-change: transform, opacity;
+  object-fit: contain;
+}
+
+.menu-preview-img img[src*="brochure.png"] {
+  object-fit: contain;
 }
 
 .menu-links,
