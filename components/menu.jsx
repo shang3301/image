@@ -203,8 +203,7 @@ const handleHover = (imgSrc) => {
                 {[      
                   { label: "Home", img: "images/gallery/6.jpg", href: "./" },
                   { label: "Events", img: "images/gallery/9.jpg", href: "./events" },
-                  { label: "Gallery", img: "images/gallery/12.jpg", href: "./gallery" },
-                  {/*{ label: "Team", img: "images/15.jpg", href: "./team" },*/}
+                  { label: "Gallery", img: "images/gallery/12.jpg", href: "./gallery" }
                 ].map(({ label, img, href = "#" }) => (
                   <div className="link" key={label}>
                     <a
