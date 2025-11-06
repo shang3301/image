@@ -545,6 +545,7 @@ ul{
   transform: translate(-50%, -0%);
   text-align: center;
   width: 100%;
+  color: #972925 !important;
 }
 
 .landing-outro-title {
@@ -554,6 +555,7 @@ ul{
   transform: translate(-50%, 0%);
   text-align: center;
   width: 100%;
+  color: #972925 !important;
 }
 
 @media (max-width: 768px) {
