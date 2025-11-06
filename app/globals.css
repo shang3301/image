@@ -195,7 +195,7 @@ nav p#logo {
 .menu-items,
 .menu-footer {
   width: 100%;
-  padding: 2.5em;
+  padding: 1.5em;
   display: flex;
   gap: 1.5em;
 }
