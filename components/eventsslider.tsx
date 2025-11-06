@@ -219,8 +219,7 @@ export default function EventSlider() {
 
   return (
     <>
-      <div className="events-footer">
-        <p>All Projects</p>
+      <div className="events-footer
         <div className="slider-counter">
           <div className="count"><p>1</p></div>
           <p>/ {allevents.length}</p>
