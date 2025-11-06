@@ -370,7 +370,7 @@ nav p#logo {
 .landing-preloader,
 .landing-inbetween,
 .landing-split-overlay {
-  background-color: #ecc39d;
+  background-color: #ead2ac;
   color: #fff;
 }
 
@@ -545,7 +545,6 @@ ul{
   transform: translate(-50%, -0%);
   text-align: center;
   width: 100%;
-  font-size: 6rem;
 }
 
 .landing-outro-title {
@@ -555,7 +554,6 @@ ul{
   transform: translate(-50%, 0%);
   text-align: center;
   width: 100%;
-  font-size: 6rem;
 }
 
 @media (max-width: 768px) {
